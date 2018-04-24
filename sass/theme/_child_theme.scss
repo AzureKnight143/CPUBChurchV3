@@ -1,5 +1,11 @@
 .navbar {
   text-transform: uppercase;
+  background: $black;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.4)
+  );
 
   input {
     text-transform: uppercase;
@@ -14,8 +20,12 @@
       height: 100px;
     }
 
-    a:hover {
-      text-decoration: none;
+    a {
+      color: $navbar-dark-color;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
 
     .brand-bold,

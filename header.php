@@ -18,7 +18,7 @@
 
 		<div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
 			<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
-			<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<nav class="navbar navbar-expand-md navbar-dark">
 			<?php if ( 'container' == $container ) : ?><div class="container"><?php endif; ?>
 			
 				<h1 class="navbar-brand mb-0 d-flex align-items-center">
