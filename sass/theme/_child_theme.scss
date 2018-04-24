@@ -6,8 +6,13 @@
   }
 
   .navbar-brand {
-    font-size: 1.5rem;
-    line-height: 1.25rem;
+    font-size: 2rem;
+    line-height: 1.75rem;
+
+    .logo {
+      width: 100px;
+      height: 100px;
+    }
 
     a:hover {
       text-decoration: none;
@@ -30,15 +35,17 @@
   }
 
   .social {
-    margin-right: 10px;
+    margin: 0 15px 0 10px;
 
     a {
       margin-right: 2px;
-    }
-  }
+      color: $navbar-dark-color;
+      padding: 0 4px;
 
-  .main-menu {
-    margin-top: 20px;
+      @include hover-focus {
+        color: $navbar-dark-hover-color;
+      }
+    }
   }
 
   .navbar-nav .nav-item {

@@ -10,10 +10,9 @@ function understrap_remove_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
-
-	// Get the theme data
+    
+    // Get the theme data
 	$the_theme = wp_get_theme();
     wp_enqueue_style( 'child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get( 'Version' ) );
     wp_enqueue_script( 'jquery');
@@ -23,3 +22,9 @@ function theme_enqueue_styles() {
         wp_enqueue_script( 'comment-reply' );
     }
 }
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
+function register_my_menu() {
+    register_nav_menu('secondary',__( 'Secondary Menu' ));
+}
+add_action( 'init', 'register_my_menu' );

@@ -21,8 +21,11 @@
 			<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 			<?php if ( 'container' == $container ) : ?><div class="container"><?php endif; ?>
 			
-				<h1 class="navbar-brand mb-0">
+				<h1 class="navbar-brand mb-0 d-flex align-items-center">
 					<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
+						<img class="logo" src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/logo.png" alt="College Park Church" />
+					</a>
+					<a class="ml-2" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
 						<span class="brand-bold">College Park</span>
 						<span class="brand-spaced">Church</span>
 					</a>	
@@ -34,26 +37,45 @@
 
 				<div class="d-flex align-items-end flex-column">
 					<div class="d-flex">
+					<?php wp_nav_menu(
+							array(
+								'theme_location'  => 'secondary',
+								'container_class' => 'd-none d-md-block',
+								'menu_class'      => 'navbar-nav',
+								'menu_id'         => 'secondary-menu',
+								'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+							)
+						); ?>
+
 						<div class="social">
-							<a href="https://www.facebook.com/cpubchurch" target="_blank"><i class="fa fa-facebook-square"></i></a>
-							<a href="https://twitter.com/cpubchurch" target="_blank"><i class="fab fa-twitter-square"></i></a>
-							<a href="<?php echo esc_url( home_url('feed') ); ?>" target="_blank"><i class="fas fa-rss-square"></i></a>
+							<a href="https://www.facebook.com/cpubchurch" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							<a href="https://twitter.com/cpubchurch" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+							<a href="<?php echo esc_url( home_url('feed') ); ?>" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a>
 						</div>
 
 						<?php get_search_form(true) ?>
 					</div>
 
-					<?php wp_nav_menu(
-						array(
-							'theme_location'  => 'primary',
-							'container_class' => 'collapse navbar-collapse',
-							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => 'navbar-nav',
-							'fallback_cb'     => '',
-							'menu_id'         => 'main-menu',
-							'walker'          => new understrap_WP_Bootstrap_Navwalker(),
-						)
-					); ?>
+					<div id="navbarNavDropdown" class="collapse navbar-collapse">
+						<?php wp_nav_menu(
+							array(
+								'theme_location'  => 'primary',
+								'menu_class'      => 'navbar-nav mt-4',
+								'menu_id'         => 'main-menu',
+								'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+							)
+						); ?>
+
+						<?php wp_nav_menu(
+							array(
+								'theme_location'  => 'secondary',
+								'container_class' => 'd-md-none',
+								'menu_class'      => 'navbar-nav',
+								'menu_id'         => 'secondary-menu',
+								'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+							)
+						); ?>
+					</div>
 				</div>
 
 				<?php if ( 'container' == $container ) : ?></div><?php endif; ?>
