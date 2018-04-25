@@ -10467,6 +10467,9 @@ a.skip-link {
 .gallery-caption {
   display: block; }
 
+button:focus {
+  outline-color: #0c5b74; }
+
 .navbar {
   text-transform: uppercase;
   background: #1a1a1a;
@@ -10479,7 +10482,8 @@ a.skip-link {
     line-height: 1.75rem; }
     .navbar .navbar-brand .logo {
       width: 100px;
-      height: 100px; }
+      height: 100px;
+      max-width: 100px; }
     .navbar .navbar-brand a {
       color: rgba(255, 255, 255, 0.9); }
       .navbar .navbar-brand a:hover {
@@ -10493,18 +10497,19 @@ a.skip-link {
     .navbar .navbar-brand .brand-spaced {
       letter-spacing: 5px;
       font-weight: 400; }
-  .navbar .social {
-    margin: 0 15px 0 10px; }
-    .navbar .social a {
-      margin-right: 2px;
-      color: rgba(255, 255, 255, 0.9);
-      padding: 0 4px; }
-      .navbar .social a:hover, .navbar .social a:focus {
-        color: rgba(255, 255, 255, 0.75); }
+  .navbar .social a {
+    margin-right: 2px;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0 4px; }
+    .navbar .social a:hover, .navbar .social a:focus {
+      color: rgba(255, 255, 255, 0.75); }
   .navbar .navbar-nav .nav-item {
-    border-right: 1px solid #ff6900; }
+    border: 0; }
     .navbar .navbar-nav .nav-item a {
       padding-top: 0;
       padding-bottom: 0; }
     .navbar .navbar-nav .nav-item:last-child {
       border-right: 0; }
+    @media (min-width: 992px) {
+      .navbar .navbar-nav .nav-item {
+        border-right: 1px solid #ff6900; } }

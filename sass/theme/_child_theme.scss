@@ -1,3 +1,7 @@
+button:focus {
+  outline-color: $blue;
+}
+
 .navbar {
   text-transform: uppercase;
   background: $black;
@@ -16,8 +20,10 @@
     line-height: 1.75rem;
 
     .logo {
-      width: 100px;
-      height: 100px;
+      $logo-size: 100px;
+      width: $logo-size;
+      height: $logo-size;
+      max-width: $logo-size;
     }
 
     a {
@@ -45,8 +51,6 @@
   }
 
   .social {
-    margin: 0 15px 0 10px;
-
     a {
       margin-right: 2px;
       color: $navbar-dark-color;
@@ -59,7 +63,7 @@
   }
 
   .navbar-nav .nav-item {
-    border-right: 1px solid $orange;
+    border: 0;
 
     a {
       padding-top: 0;
@@ -68,6 +72,10 @@
 
     &:last-child {
       border-right: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      border-right: 1px solid $orange;
     }
   }
 }
