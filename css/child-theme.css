@@ -10503,13 +10503,29 @@ button:focus {
     padding: 0 4px; }
     .navbar .social a:hover, .navbar .social a:focus {
       color: rgba(255, 255, 255, 0.75); }
+  @media (max-width: 991.98px) {
+    .navbar #navbar-dropdown {
+      width: 100%;
+      border-top: 2px solid rgba(255, 255, 255, 0.9); } }
   .navbar .navbar-nav .nav-item {
     border: 0; }
     .navbar .navbar-nav .nav-item a {
-      padding-top: 0;
-      padding-bottom: 0; }
+      padding-top: 5px;
+      padding-bottom: 5px; }
     .navbar .navbar-nav .nav-item:last-child {
       border-right: 0; }
     @media (min-width: 992px) {
       .navbar .navbar-nav .nav-item {
         border-right: 1px solid #ff6900; } }
+    .navbar .navbar-nav .nav-item .dropdown-menu {
+      margin-top: 10px; }
+      .navbar .navbar-nav .nav-item .dropdown-menu .nav-item {
+        border: 0; }
+      @media (max-width: 991.98px) {
+        .navbar .navbar-nav .nav-item .dropdown-menu {
+          margin-top: 0;
+          padding: 0;
+          background-color: transparent;
+          border: 0; }
+          .navbar .navbar-nav .nav-item .dropdown-menu .nav-item a {
+            color: rgba(255, 255, 255, 0.9) !important; } }

@@ -51,16 +51,16 @@
 
 						<?php get_search_form(true) ?>
 
-						<button class="navbar-toggler ml-lg-3 ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<button class="navbar-toggler ml-lg-3 ml-auto" type="button" data-toggle="collapse" data-target="#navbar-dropdown" aria-controls="navbar-dropdown" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
 					</div>
 
-					<div id="navbarNavDropdown" class="collapse navbar-collapse">
+					<div id="navbar-dropdown" class="collapse navbar-collapse mt-lg-3 mt-md-3 pt-md-2">
 						<?php wp_nav_menu(
 							array(
 								'theme_location'  => 'primary',
-								'menu_class'      => 'navbar-nav mt-4',
+								'menu_class'      => 'navbar-nav',
 								'menu_id'         => 'main-menu',
 								'walker'          => new understrap_WP_Bootstrap_Navwalker(),
 							)
