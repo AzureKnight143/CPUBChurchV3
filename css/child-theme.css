@@ -10467,8 +10467,23 @@ a.skip-link {
 .gallery-caption {
   display: block; }
 
+body:not(.home) {
+  background-image: none !important; }
+
+body.home.custom-background {
+  background-position: top center;
+  background-size: 100% 450px;
+  background-attachment: inherit;
+  background-repeat: no-repeat; }
+
+body.home .wrapper-navbar {
+  margin-bottom: 325px; }
+
 button:focus {
   outline-color: #0c5b74; }
+
+.wrapper-navbar {
+  height: 125px; }
 
 .navbar {
   text-transform: uppercase;
