@@ -1,0 +1,17 @@
+.site-footer .site-info {
+  color: $white;
+  text-align: center;
+  text-transform: uppercase;
+
+  .pipe {
+    color: $orange;
+  }
+
+  a {
+    color: $navbar-dark-color;
+
+    &:hover {
+      color: $navbar-dark-hover-color;
+    }
+  }
+}

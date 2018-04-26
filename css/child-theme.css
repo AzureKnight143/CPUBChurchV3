@@ -10467,9 +10467,6 @@ a.skip-link {
 .gallery-caption {
   display: block; }
 
-body {
-  background-color: #4d4d4f; }
-
 body:not(.home) {
   background-image: none !important; }
 
@@ -10481,9 +10478,6 @@ body.home.custom-background {
 
 body.home .wrapper-navbar {
   margin-bottom: 325px; }
-
-button:focus {
-  outline-color: #005570; }
 
 .wrapper-navbar {
   height: 125px; }
@@ -10558,3 +10552,9 @@ button:focus {
     color: #e6e6e6; }
     .site-footer .site-info a:hover {
       color: rgba(230, 230, 230, 0.75); }
+
+body {
+  background-color: #4d4d4f; }
+
+button:focus {
+  outline-color: #005570; }

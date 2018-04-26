@@ -1,0 +1,124 @@
+body:not(.home) {
+  background-image: none !important;
+}
+
+body.home {
+  &.custom-background {
+    background-position: top center;
+    background-size: 100% 450px;
+    background-attachment: inherit;
+    background-repeat: no-repeat;
+  }
+
+  .wrapper-navbar {
+    margin-bottom: 325px;
+  }
+}
+
+.wrapper-navbar {
+  height: 125px;
+}
+
+.navbar {
+  text-transform: uppercase;
+  background: $black;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.4)
+  );
+
+  input {
+    text-transform: uppercase;
+  }
+
+  .navbar-brand {
+    font-size: 2rem;
+    line-height: 1.75rem;
+
+    .logo {
+      $logo-size: 100px;
+      width: $logo-size;
+      height: $logo-size;
+      max-width: $logo-size;
+    }
+
+    a {
+      color: $navbar-dark-color;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .brand-bold,
+    .brand-spaced {
+      display: block;
+    }
+
+    .brand-bold {
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .brand-spaced {
+      letter-spacing: 5px;
+      font-weight: 400;
+    }
+  }
+
+  .social {
+    a {
+      margin-right: 2px;
+      color: $navbar-dark-color;
+      padding: 0 4px;
+
+      @include hover-focus {
+        color: $navbar-dark-hover-color;
+      }
+    }
+  }
+
+  #navbar-dropdown {
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      border-top: 2px solid $navbar-dark-color;
+    }
+  }
+
+  .navbar-nav .nav-item {
+    border: 0;
+
+    a {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      border-right: 1px solid $orange;
+    }
+
+    .dropdown-menu {
+      margin-top: 10px;
+
+      .nav-item {
+        border: 0;
+      }
+
+      @include media-breakpoint-down(md) {
+        margin-top: 0;
+        padding: 0;
+        background-color: transparent;
+        border: 0;
+
+        .nav-item a {
+          color: $navbar-dark-color !important;
+        }
+      }
+    }
+  }
+}
