@@ -13,10 +13,21 @@ body.home {
   .wrapper-navbar {
     margin-bottom: 325px;
   }
+
+  @include media-breakpoint-down(md) {
+    background-image: none !important;
+    .wrapper-navbar {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .wrapper-navbar {
   height: 125px;
+
+  @include media-breakpoint-down(md) {
+    height: auto;
+  }
 }
 
 .navbar {

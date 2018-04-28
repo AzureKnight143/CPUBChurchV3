@@ -10479,8 +10479,17 @@ body.home.custom-background {
 body.home .wrapper-navbar {
   margin-bottom: 325px; }
 
+@media (max-width: 991.98px) {
+  body.home {
+    background-image: none !important; }
+    body.home .wrapper-navbar {
+      margin-bottom: 0; } }
+
 .wrapper-navbar {
   height: 125px; }
+  @media (max-width: 991.98px) {
+    .wrapper-navbar {
+      height: auto; } }
 
 .navbar {
   text-transform: uppercase;
@@ -10542,6 +10551,9 @@ body.home .wrapper-navbar {
           .navbar .navbar-nav .nav-item .dropdown-menu .nav-item a {
             color: #e6e6e6 !important; } }
 
+#wrapper-footer {
+  padding-top: 0; }
+
 .site-footer .site-info {
   color: #e6e6e6;
   text-align: center;
@@ -10558,3 +10570,7 @@ body {
 
 button:focus {
   outline-color: #005570; }
+
+#content {
+  background-color: #e6e6e6;
+  padding: 1.5rem; }
