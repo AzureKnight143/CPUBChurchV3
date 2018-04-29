@@ -1,6 +1,19 @@
 <?php
-get_header();
+$latest_sermon_args = array( 
+    'numberposts' => '1',
+    'post_status' => 'publish', 
+    'meta_key' => '_thumbnail_id',
+    'category_name' => 'sermons');
+$latest_sermon = wp_get_recent_posts( $latest_sermon_args )[0];
+wp_reset_query();
+    
+$recent_posts_args = array( 
+    'numberposts' => '4',
+    'post_status' => 'publish');
+$recent_posts = wp_get_recent_posts( $recent_posts_args );
+
 $container = get_theme_mod( 'understrap_container_type' );
+get_header();
 ?>
 
 <div class="wrapper" id="home-wrapper">
@@ -18,8 +31,15 @@ $container = get_theme_mod( 'understrap_container_type' );
                     11:00 AM Contemporary Worship Service<br />
                     6:06 PM CP Youth
                 </div>  
-                <div class="col-sm">
-
+                <div class="col-sm sermons">
+                    <?php if (has_post_thumbnail( $latest_sermon["ID"] ) ): ?>
+                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $latest_sermon["ID"] ), 'single-post-thumbnail' ); ?>
+                        <a href="<?php echo get_permalink($latest_sermon["ID"]); ?>">
+                            <img src="<?php echo $image[0]; ?>" alt="<?php echo $latest_sermon["post_title"]; ?>" />
+                        </a>
+                    <?php endif; ?>
+                    <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('category/sermons') ); ?>">Sermons</a>
+                    <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('contact-us') ); ?>">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -66,6 +86,12 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="row">
                 <div class="col-sm">
                     <h2>News from College Park</h2>
+                    <ul>
+                    <?php foreach( $recent_posts as $recent ) { ?>
+                        <li><a href="<?php echo get_permalink($recent["ID"]); ?>"><?php echo $recent["post_title"]; ?></a></li>
+                    <?php } ?>
+                    </ul>
+                    <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('category/news') ); ?>">View More</a>
                 </div>
                 <div class="col-sm">
                     <h2>Impact the World for Christ</h2>

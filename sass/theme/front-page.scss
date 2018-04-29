@@ -1,7 +1,5 @@
-.home {
-  #home-wrapper {
-    padding-top: 0;
-  }
+#home-wrapper {
+  padding-top: 0;
 
   h1,
   h2 {
@@ -25,8 +23,22 @@
     color: $orange;
     font-size: 1.25rem;
   }
-}
 
-img {
-  width: 100%;
+  img {
+    width: 100%;
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  .sermons {
+    .btn {
+      margin-top: 1rem;
+    }
+  }
 }

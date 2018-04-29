@@ -10,6 +10,11 @@ button:focus {
   outline-color: $blue;
 }
 
+.btn {
+  text-transform: uppercase;
+  width: 8rem;
+}
+
 #content,
 .content {
   background-color: $white;
