@@ -10821,8 +10821,8 @@ body.home .wrapper-navbar {
       letter-spacing: 1px;
       font-weight: 700; }
     .navbar .navbar-brand .brand-spaced {
-      letter-spacing: 5px;
-      font-weight: 400; }
+      letter-spacing: 7px;
+      font-weight: 300; }
   .navbar .social a {
     margin-right: 2px;
     color: #fefefe;
@@ -10873,12 +10873,37 @@ body.home .wrapper-navbar {
     .site-footer .site-info a:hover {
       color: rgba(254, 254, 254, 0.75); }
 
+.home #home-wrapper {
+  padding-top: 0; }
+
+.home h1,
+.home h2 {
+  text-transform: uppercase; }
+
+.home h1 {
+  color: #fefefe;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 0.75rem 0;
+  margin: 0; }
+  .home h1 .script {
+    color: #ff6c00;
+    text-transform: initial; }
+
+.home h2 {
+  color: #ff6c00;
+  font-size: 1.25rem; }
+
+img {
+  width: 100%; }
+
 body {
   background-color: #4d4d4f; }
 
 button:focus {
   outline-color: #005570; }
 
-#content {
+#content,
+.content {
   background-color: #fefefe;
   padding: 1.5rem; }
