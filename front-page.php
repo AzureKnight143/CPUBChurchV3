@@ -23,7 +23,7 @@ get_header();
         </div>
         <div class="<?php echo esc_attr( $container ); ?> content">
             <div class="row">
-                <div class="col-sm">
+                <div class="col-md mb-4 mb-md-0">
                     <h2>Weekly Worship Schedule</h2>
                     <h6>Sundays</h6>
                     8:30 AM Worship Service<br />
@@ -31,15 +31,15 @@ get_header();
                     11:00 AM Contemporary Worship Service<br />
                     6:06 PM CP Youth
                 </div>  
-                <div class="col-sm sermons">
+                <div class="col-md">
                     <?php if (has_post_thumbnail( $latest_sermon["ID"] ) ): ?>
                         <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $latest_sermon["ID"] ), 'single-post-thumbnail' ); ?>
                         <a href="<?php echo get_permalink($latest_sermon["ID"]); ?>">
                             <img src="<?php echo $image[0]; ?>" alt="<?php echo $latest_sermon["post_title"]; ?>" />
                         </a>
                     <?php endif; ?>
-                    <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('category/sermons') ); ?>">Sermons</a>
-                    <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('contact-us') ); ?>">Contact Us</a>
+                    <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('category/sermons') ); ?>">Sermons</a>
+                    <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('contact-us') ); ?>">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -67,12 +67,12 @@ get_header();
         </div>
         <div class="<?php echo esc_attr( $container ); ?> content">
             <div class="row">
-                <div class="col-sm">
+                <div class="col-md mb-4 mb-md-0">
                     <a href="<?php echo esc_url( home_url('ministries') ); ?>">
                         <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/get-involved.png" alt="Get Involved" /> 
                     </a>                  
                 </div>
-                <div class="col-sm">
+                <div class="col-md">
                     <a href="<?php echo esc_url( home_url('care-ministries') ); ?>">
                         <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/request-support.png" alt="Request Support" />
                     </a>
@@ -84,16 +84,16 @@ get_header();
         </div>
         <div class="<?php echo esc_attr( $container ); ?> content">
             <div class="row">
-                <div class="col-sm">
+                <div class="col-md mb-4 mb-md-0">
                     <h2>News from College Park</h2>
-                    <ul>
+                    <dl>
                     <?php foreach( $recent_posts as $recent ) { ?>
-                        <li><a href="<?php echo get_permalink($recent["ID"]); ?>"><?php echo $recent["post_title"]; ?></a></li>
+                        <dd><a href="<?php echo get_permalink($recent["ID"]); ?>"><?php echo $recent["post_title"]; ?></a></dd>
                     <?php } ?>
-                    </ul>
+                    </dl>
                     <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('category/news') ); ?>">View More</a>
                 </div>
-                <div class="col-sm">
+                <div class="col-md">
                     <h2>Impact the World for Christ</h2>
                     <a href="<?php echo esc_url( home_url('missions') ); ?>">Missions</a>
                 </div>

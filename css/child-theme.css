@@ -10892,13 +10892,6 @@ body.home .wrapper-navbar {
     font-size: 1.25rem; }
   #home-wrapper img {
     width: 100%; }
-  #home-wrapper ul {
-    padding: 0; }
-    #home-wrapper ul li {
-      list-style: none; }
-  #home-wrapper .sermons .btn,
-  #home-wrapper .sermons .wpcf7 input[type=submit], .wpcf7 #home-wrapper .sermons input[type=submit] {
-    margin-top: 1rem; }
 
 body {
   background-color: #4d4d4f; }
