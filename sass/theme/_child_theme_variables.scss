@@ -1,7 +1,11 @@
-$black: #111111;
+$black: #212529;
 $white: #fefefe;
 $gray-dark: #4d4d4f;
 $blue: #005570;
 $orange: #ff6c00;
 
 $navbar-dark-color: $white;
+$dropdown-link-hover-bg: $white;
+$dropdown-link-active-color: $black;
+$dropdown-link-active-bg: $white;
+$link-hover-color: lighten($blue, 10%);
