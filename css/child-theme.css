@@ -10875,9 +10875,6 @@ body.home .wrapper-navbar {
 
 #home-wrapper {
   padding-top: 0; }
-  #home-wrapper h1,
-  #home-wrapper h2 {
-    text-transform: uppercase; }
   #home-wrapper h1 {
     color: #fefefe;
     font-size: 1.5rem;
@@ -10892,6 +10889,9 @@ body.home .wrapper-navbar {
     font-size: 1.25rem; }
   #home-wrapper img {
     width: 100%; }
+  @media (min-width: 992px) {
+    #home-wrapper .others img {
+      width: 50%; } }
 
 body {
   background-color: #4d4d4f; }
@@ -10902,14 +10902,16 @@ button:focus {
 .btn,
 .wpcf7 input[type=submit] {
   text-transform: uppercase;
-  width: 8rem; }
+  min-width: 8rem; }
 
 h1 {
   color: #ff6c00;
-  font-size: 1.75rem; }
+  font-size: 1.75rem;
+  text-transform: uppercase; }
 
 h2 {
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  text-transform: uppercase; }
 
 h3 {
   color: #ff6c00;

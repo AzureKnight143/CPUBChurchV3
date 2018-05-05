@@ -46,19 +46,22 @@ get_header();
         <div class="<?php echo esc_attr( $container ); ?>">
             <h1>Connect with <span class="script">others</span></h1>
         </div>
-        <div class="<?php echo esc_attr( $container ); ?> content">
+        <div class="<?php echo esc_attr( $container ); ?> content others text-center">
             <div class="row">
-                <div class="col-sm">
-                    <a href="<?php echo esc_url( home_url('adult-ministries') ); ?>">adults</a>
+                <div class="col">
+                    <a href="<?php echo esc_url( home_url('adult-ministries') ); ?>">
+                        <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/cp-adults.png" alt="Adults" />
+                    </a>
                 </div>
-                <div class="col-sm">
-                    <a href="<?php echo esc_url( home_url('small-group-ministries') ); ?>">small groups</a>
+                <div class="col">
+                    <a href="<?php echo esc_url( home_url('student-ministries') ); ?>">
+                        <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/cp-youth.png" alt="Youth" /> 
+                    </a>
                 </div>
-                <div class="col-sm">
-                    <a href="<?php echo esc_url( home_url('student-ministries') ); ?>">youth</a>
-                </div>
-                <div class="col-sm">
-                    <a href="<?php echo esc_url( home_url('childrens-ministries') ); ?>">children</a>
+                <div class="col">
+                    <a href="<?php echo esc_url( home_url('childrens-ministries') ); ?>">
+                        <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/cp-children.png" alt="Children" />
+                    </a>
                 </div>
             </div>
         </div>
@@ -68,7 +71,7 @@ get_header();
         <div class="<?php echo esc_attr( $container ); ?> content">
             <div class="row">
                 <div class="col-md mb-4 mb-md-0">
-                    <a href="<?php echo esc_url( home_url('ministries') ); ?>">
+                    <a href="<?php echo esc_url( home_url('serving-request') ); ?>">
                         <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/get-involved.png" alt="Get Involved" /> 
                     </a>                  
                 </div>
@@ -85,6 +88,12 @@ get_header();
         <div class="<?php echo esc_attr( $container ); ?> content">
             <div class="row">
                 <div class="col-md mb-4 mb-md-0">
+                    <h2>Impact the World for Christ</h2>
+                    <a href="<?php echo esc_url( home_url('missions') ); ?>">
+                        <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/missions.png" alt="Missions" />
+                    </a>
+                </div>
+                <div class="col-md">
                     <h2>News from College Park</h2>
                     <dl>
                     <?php foreach( $recent_posts as $recent ) { ?>
@@ -92,10 +101,7 @@ get_header();
                     <?php } ?>
                     </dl>
                     <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('category/news') ); ?>">View More</a>
-                </div>
-                <div class="col-md">
-                    <h2>Impact the World for Christ</h2>
-                    <a href="<?php echo esc_url( home_url('missions') ); ?>">Missions</a>
+                    <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('calendar') ); ?>">Upcoming Events</a>
                 </div>
             </div>
         </div>
