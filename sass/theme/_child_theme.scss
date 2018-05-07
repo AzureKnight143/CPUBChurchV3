@@ -2,6 +2,11 @@
 @import "footer";
 @import "front-page";
 
+@font-face {
+  font-family: playlist;
+  src: url(../fonts/playlist-script.otf);
+}
+
 body {
   background-color: $gray-dark;
 }
