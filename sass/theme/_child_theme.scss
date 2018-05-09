@@ -42,10 +42,20 @@ h3 {
   padding: 1.5rem;
 }
 
-.wp-post-image {
-  width: 100%;
-}
+#content {
+  .entry-meta {
+    .updated,
+    .byline {
+      display: none;
+    }
+  }
 
-.mejs-container {
-  margin: 1rem 0;
+  .wp-post-image {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .mejs-container {
+    margin: 1rem 0;
+  }
 }

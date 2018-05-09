@@ -147,7 +147,7 @@ a {
   -webkit-text-decoration-skip: objects; }
   a:hover {
     color: #007ca3;
-    text-decoration: underline; }
+    text-decoration: none; }
 
 a:not([href]):not([tabindex]) {
   color: inherit;
@@ -2948,11 +2948,11 @@ fieldset:disabled a.btn {
   background-color: transparent; }
   .btn-link:hover {
     color: #007ca3;
-    text-decoration: underline;
+    text-decoration: none;
     background-color: transparent;
     border-color: transparent; }
   .btn-link:focus, .btn-link.focus {
-    text-decoration: underline;
+    text-decoration: none;
     border-color: transparent;
     -webkit-box-shadow: none;
             box-shadow: none; }
@@ -10930,8 +10930,13 @@ h3 {
   background-color: #fefefe;
   padding: 1.5rem; }
 
-.wp-post-image {
-  width: 100%; }
+#content .entry-meta .updated,
+#content .entry-meta .byline {
+  display: none; }
 
-.mejs-container {
+#content .wp-post-image {
+  width: 100%;
+  padding: 1rem 0; }
+
+#content .mejs-container {
   margin: 1rem 0; }
