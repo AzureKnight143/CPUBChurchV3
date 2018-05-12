@@ -24,6 +24,7 @@ h1 {
   color: $orange;
   font-size: 1.75rem;
   text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
 h2 {
@@ -44,10 +45,17 @@ h3 {
 
 #content {
   .entry-meta {
-    .updated,
+    display: inline-block;
+    margin-bottom: 0.25rem;
+
+    time:not(.entry-date),
     .byline {
       display: none;
     }
+  }
+
+  .entry-footer {
+    display: none;
   }
 
   .wp-post-image {

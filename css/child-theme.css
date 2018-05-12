@@ -10915,7 +10915,8 @@ button:focus {
 h1 {
   color: #ff6c00;
   font-size: 1.75rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin-bottom: 1rem; }
 
 h2 {
   font-size: 1.5rem;
@@ -10930,8 +10931,14 @@ h3 {
   background-color: #fefefe;
   padding: 1.5rem; }
 
-#content .entry-meta .updated,
-#content .entry-meta .byline {
+#content .entry-meta {
+  display: inline-block;
+  margin-bottom: 0.25rem; }
+  #content .entry-meta time:not(.entry-date),
+  #content .entry-meta .byline {
+    display: none; }
+
+#content .entry-footer {
   display: none; }
 
 #content .wp-post-image {

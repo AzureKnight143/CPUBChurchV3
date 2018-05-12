@@ -39,5 +39,5 @@ function get_the_archive_title_simple($title) {
 
 add_filter( 'wp_trim_excerpt', 'understrap_all_excerpts_get_more_link' );
 function understrap_all_excerpts_get_more_link($post_excerpt) {
-    return $post_excerpt . ' ...<p><a class="btn btn-primary" href="' . esc_url( get_permalink( get_the_ID() )) . '">' . __( 'Read More', 'understrap' ) . '</a></p>';
+    return $post_excerpt . ' ...<p class="mb-0"><a class="btn btn-primary" href="' . esc_url( get_permalink( get_the_ID() )) . '">' . __( 'Read More', 'understrap' ) . '</a></p>';
 }
