@@ -58,9 +58,12 @@ h3 {
     display: none;
   }
 
-  .wp-post-image {
-    width: 100%;
-    padding: 1rem 0;
+  .page,
+  .post {
+    .wp-post-image {
+      width: 100%;
+      padding: 0 0 1rem 0;
+    }
   }
 
   .mejs-container {

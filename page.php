@@ -29,10 +29,13 @@ get_header();
                         if ( $parent->have_posts() ) :                      
                             while ( $parent->have_posts() ) : $parent->the_post();
                         ?>
-                            <div class="col-6">
+                            <div class="col-lg-6">
                                 <div class="card mb-4">
+                                    <a href="<?php esc_url( the_permalink() ) ?>">
+                                        <?php echo get_the_post_thumbnail( $post->ID, 'large', array( 'class' => 'card-img-top' ) ); ?>
+                                    </a>
                                     <div class="card-body">
-                                        <a href="<?php the_permalink() ?>">
+                                        <a href="<?php esc_url( the_permalink() ) ?>">
                                             <h5 class="card-title"><?php the_title() ?></h5>
                                         </a>
                                         <div class="card-text">

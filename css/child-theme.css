@@ -10941,9 +10941,10 @@ h3 {
 #content .entry-footer {
   display: none; }
 
-#content .wp-post-image {
+#content .page .wp-post-image,
+#content .post .wp-post-image {
   width: 100%;
-  padding: 1rem 0; }
+  padding: 0 0 1rem 0; }
 
 #content .mejs-container {
   margin: 1rem 0; }
