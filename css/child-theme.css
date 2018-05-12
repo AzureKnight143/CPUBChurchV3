@@ -10924,6 +10924,7 @@ h2 {
 
 h3 {
   color: #ff6c00;
+  text-transform: uppercase;
   font-size: 1.25rem; }
 
 #content,
@@ -10948,3 +10949,18 @@ h3 {
 
 #content .mejs-container {
   margin: 1rem 0; }
+
+@media (max-width: 767.98px) {
+  #content #right-sidebar,
+  #content #left-sidebar {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #4d4d4f; } }
+
+#content #right-sidebar ul,
+#content #left-sidebar ul {
+  list-style: none;
+  padding-left: 0; }
+  #content #right-sidebar ul li,
+  #content #left-sidebar ul li {
+    padding: 0.25rem 0; }

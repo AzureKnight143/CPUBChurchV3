@@ -34,6 +34,7 @@ h2 {
 
 h3 {
   color: $orange;
+  text-transform: uppercase;
   font-size: 1.25rem;
 }
 
@@ -68,5 +69,23 @@ h3 {
 
   .mejs-container {
     margin: 1rem 0;
+  }
+
+  #right-sidebar,
+  #left-sidebar {
+    @include media-breakpoint-down(sm) {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 2px solid $gray-dark;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        padding: 0.25rem 0;
+      }
+    }
   }
 }
