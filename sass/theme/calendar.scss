@@ -1,0 +1,30 @@
+#content .calendar {
+  .entry-meta,
+  .post-edit-link {
+    display: none;
+  }
+
+  .simcal-default-calendar-grid {
+    .simcal-day {
+      color: $black;
+
+      &.simcal-day-has-events {
+        > div {
+          > span:not(.simcal-events-dots) {
+            background-color: $black !important;
+          }
+        }
+      }
+
+      &.simcal-today {
+        > div {
+          border: 0 !important;
+
+          > span:not(.simcal-events-dots) {
+            background-color: $blue !important;
+          }
+        }
+      }
+    }
+  }
+}

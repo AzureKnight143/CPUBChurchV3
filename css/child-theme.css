@@ -10897,6 +10897,78 @@ body.home .wrapper-navbar {
     #home-wrapper .others img {
       width: 50%; } }
 
+@media (max-width: 767.98px) {
+  #right-sidebar,
+  #left-sidebar {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #4d4d4f; } }
+
+#right-sidebar ul,
+#left-sidebar ul {
+  list-style: none;
+  padding-left: 0; }
+  #right-sidebar ul li,
+  #left-sidebar ul li {
+    padding: 0.25rem 0; }
+
+#right-sidebar .simcal-default-calendar-list,
+#left-sidebar .simcal-default-calendar-list {
+  padding: 0; }
+  #right-sidebar .simcal-default-calendar-list .post-edit-link,
+  #left-sidebar .simcal-default-calendar-list .post-edit-link {
+    display: none; }
+  #right-sidebar .simcal-default-calendar-list p,
+  #right-sidebar .simcal-default-calendar-list .simcal-events,
+  #right-sidebar .simcal-default-calendar-list .simcal-event,
+  #left-sidebar .simcal-default-calendar-list p,
+  #left-sidebar .simcal-default-calendar-list .simcal-events,
+  #left-sidebar .simcal-default-calendar-list .simcal-event {
+    margin: 0; }
+    #right-sidebar .simcal-default-calendar-list p .simcal-event-details,
+    #right-sidebar .simcal-default-calendar-list .simcal-events .simcal-event-details,
+    #right-sidebar .simcal-default-calendar-list .simcal-event .simcal-event-details,
+    #left-sidebar .simcal-default-calendar-list p .simcal-event-details,
+    #left-sidebar .simcal-default-calendar-list .simcal-events .simcal-event-details,
+    #left-sidebar .simcal-default-calendar-list .simcal-event .simcal-event-details {
+      font-size: 1rem; }
+
+#content,
+.content {
+  background-color: #fefefe;
+  padding: 1.5rem; }
+
+#content .entry-meta {
+  display: inline-block;
+  margin-bottom: 0.25rem; }
+  #content .entry-meta time:not(.entry-date),
+  #content .entry-meta .byline {
+    display: none; }
+
+#content .entry-footer {
+  display: none; }
+
+#content .page .wp-post-image,
+#content .post .wp-post-image {
+  width: 100%;
+  padding: 0 0 1rem 0; }
+
+#content .mejs-container {
+  margin: 1rem 0; }
+
+#content .calendar .entry-meta,
+#content .calendar .post-edit-link {
+  display: none; }
+
+#content .calendar .simcal-default-calendar-grid .simcal-day {
+  color: #212529; }
+  #content .calendar .simcal-default-calendar-grid .simcal-day.simcal-day-has-events > div > span:not(.simcal-events-dots) {
+    background-color: #212529 !important; }
+  #content .calendar .simcal-default-calendar-grid .simcal-day.simcal-today > div {
+    border: 0 !important; }
+    #content .calendar .simcal-default-calendar-grid .simcal-day.simcal-today > div > span:not(.simcal-events-dots) {
+      background-color: #005570 !important; }
+
 @font-face {
   font-family: playlist;
   src: url(../fonts/playlist-script.otf); }
@@ -10926,41 +10998,3 @@ h3 {
   color: #ff6c00;
   text-transform: uppercase;
   font-size: 1.25rem; }
-
-#content,
-.content {
-  background-color: #fefefe;
-  padding: 1.5rem; }
-
-#content .entry-meta {
-  display: inline-block;
-  margin-bottom: 0.25rem; }
-  #content .entry-meta time:not(.entry-date),
-  #content .entry-meta .byline {
-    display: none; }
-
-#content .entry-footer {
-  display: none; }
-
-#content .page .wp-post-image,
-#content .post .wp-post-image {
-  width: 100%;
-  padding: 0 0 1rem 0; }
-
-#content .mejs-container {
-  margin: 1rem 0; }
-
-@media (max-width: 767.98px) {
-  #content #right-sidebar,
-  #content #left-sidebar {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 2px solid #4d4d4f; } }
-
-#content #right-sidebar ul,
-#content #left-sidebar ul {
-  list-style: none;
-  padding-left: 0; }
-  #content #right-sidebar ul li,
-  #content #left-sidebar ul li {
-    padding: 0.25rem 0; }

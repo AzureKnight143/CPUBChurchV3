@@ -1,0 +1,35 @@
+#right-sidebar,
+#left-sidebar {
+  @include media-breakpoint-down(sm) {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid $gray-dark;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      padding: 0.25rem 0;
+    }
+  }
+
+  .simcal-default-calendar-list {
+    padding: 0;
+
+    .post-edit-link {
+      display: none;
+    }
+
+    p,
+    .simcal-events,
+    .simcal-event {
+      margin: 0;
+
+      .simcal-event-details {
+        font-size: 1rem;
+      }
+    }
+  }
+}

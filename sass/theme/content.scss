@@ -1,0 +1,33 @@
+#content,
+.content {
+  background-color: $white;
+  padding: 1.5rem;
+}
+
+#content {
+  .entry-meta {
+    display: inline-block;
+    margin-bottom: 0.25rem;
+
+    time:not(.entry-date),
+    .byline {
+      display: none;
+    }
+  }
+
+  .entry-footer {
+    display: none;
+  }
+
+  .page,
+  .post {
+    .wp-post-image {
+      width: 100%;
+      padding: 0 0 1rem 0;
+    }
+  }
+
+  .mejs-container {
+    margin: 1rem 0;
+  }
+}
