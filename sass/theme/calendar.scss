@@ -20,7 +20,7 @@
         > div {
           border: 0 !important;
 
-          > span:not(.simcal-events-dots) {
+          > span:first-child():not(.simcal-events-dots) {
             background-color: $blue !important;
           }
         }

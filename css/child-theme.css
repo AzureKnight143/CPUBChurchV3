@@ -10966,7 +10966,7 @@ body.home .wrapper-navbar {
     background-color: #212529 !important; }
   #content .calendar .simcal-default-calendar-grid .simcal-day.simcal-today > div {
     border: 0 !important; }
-    #content .calendar .simcal-default-calendar-grid .simcal-day.simcal-today > div > span:not(.simcal-events-dots) {
+    #content .calendar .simcal-default-calendar-grid .simcal-day.simcal-today > div > span:first-child:not(.simcal-events-dots) {
       background-color: #005570 !important; }
 
 @font-face {
