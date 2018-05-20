@@ -39,7 +39,7 @@ body.home {
     rgba(0, 0, 0, 0.4)
   );
 
-  input {
+  input::placeholder {
     text-transform: uppercase;
   }
 

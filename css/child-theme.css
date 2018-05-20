@@ -10801,7 +10801,13 @@ body.home .wrapper-navbar {
   background: #212529;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.4)));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)); }
-  .navbar input {
+  .navbar input::-webkit-input-placeholder {
+    text-transform: uppercase; }
+  .navbar input:-ms-input-placeholder {
+    text-transform: uppercase; }
+  .navbar input::-ms-input-placeholder {
+    text-transform: uppercase; }
+  .navbar input::placeholder {
     text-transform: uppercase; }
   .navbar .navbar-brand {
     font-size: 2rem;
