@@ -10801,14 +10801,6 @@ body.home .wrapper-navbar {
   background: #212529;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.4)));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)); }
-  .navbar input::-webkit-input-placeholder {
-    text-transform: uppercase; }
-  .navbar input:-ms-input-placeholder {
-    text-transform: uppercase; }
-  .navbar input::-ms-input-placeholder {
-    text-transform: uppercase; }
-  .navbar input::placeholder {
-    text-transform: uppercase; }
   .navbar .navbar-brand {
     font-size: 2rem;
     line-height: 1.75rem; }
@@ -10994,6 +10986,18 @@ button:focus {
 .wpcf7 input[type=submit] {
   text-transform: uppercase;
   min-width: 8rem; }
+
+input::-webkit-input-placeholder {
+  text-transform: uppercase; }
+
+input:-ms-input-placeholder {
+  text-transform: uppercase; }
+
+input::-ms-input-placeholder {
+  text-transform: uppercase; }
+
+input::placeholder {
+  text-transform: uppercase; }
 
 h1 {
   color: #ff6c00;

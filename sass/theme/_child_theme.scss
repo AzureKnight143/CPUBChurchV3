@@ -23,6 +23,10 @@ button:focus {
   min-width: 8rem;
 }
 
+input::placeholder {
+  text-transform: uppercase;
+}
+
 h1 {
   color: $orange;
   font-size: 1.75rem;
