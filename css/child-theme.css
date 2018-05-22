@@ -10962,6 +10962,11 @@ body.home .wrapper-navbar {
 #content .mejs-container {
   margin: 1rem 0; }
 
+#content .wpcf7 {
+  max-width: 100%; }
+  #content .wpcf7 .wpcf7-response-output {
+    margin: 0; }
+
 #content .calendar .entry-meta,
 #content .calendar .post-edit-link {
   display: none; }

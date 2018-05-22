@@ -71,7 +71,7 @@ get_header();
         <div class="<?php echo esc_attr( $container ); ?> content">
             <div class="row">
                 <div class="col-md mb-4 mb-md-0">
-                    <a href="<?php echo esc_url( home_url('serving-request') ); ?>">
+                    <a href="<?php echo esc_url( home_url('get-involved') ); ?>">
                         <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/get-involved.png" alt="Get Involved" /> 
                     </a>                  
                 </div>

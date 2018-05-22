@@ -30,4 +30,12 @@
   .mejs-container {
     margin: 1rem 0;
   }
+
+  .wpcf7 {
+    max-width: 100%;
+
+    .wpcf7-response-output {
+      margin: 0;
+    }
+  }
 }
