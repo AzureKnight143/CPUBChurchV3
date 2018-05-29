@@ -20,6 +20,17 @@ function theme_enqueue_styles() {
     }
 }
 
+add_filter( 'theme_page_templates', 'remove_page_templates' );
+function remove_page_templates( $templates ) {
+    unset( $templates['page-templates/blank.php'] );
+    unset( $templates['page-templates/both-sidebarspage.php'] );
+    unset( $templates['page-templates/empty.php'] );
+    unset( $templates['page-templates/fullwidthpage.php'] );
+    unset( $templates['page-templates/left-sidebarpage.php'] );
+    unset( $templates['page-templates/right-sidebarpage.php'] );
+    return $templates;
+}
+
 add_action( 'init', 'register_my_menu' );
 function register_my_menu() {
     register_nav_menu('secondary',__( 'Secondary Menu' ));
