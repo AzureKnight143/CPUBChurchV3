@@ -10951,6 +10951,11 @@ body.home .wrapper-navbar {
   width: 100%;
   padding: 0 0 1rem 0; }
 
+#content .page-posts {
+  border-top: 2px solid #4d4d4f;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem; }
+
 #content .mejs-container {
   margin: 1rem 0; }
 
@@ -11006,10 +11011,11 @@ h1 {
   margin-bottom: 1rem; }
 
 h2 {
+  color: #ff6c00;
   font-size: 1.5rem;
   text-transform: uppercase; }
 
 h3 {
   color: #ff6c00;
-  text-transform: uppercase;
-  font-size: 1.25rem; }
+  font-size: 1.25rem;
+  text-transform: uppercase; }
