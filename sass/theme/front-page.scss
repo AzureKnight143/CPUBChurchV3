@@ -9,9 +9,8 @@
     margin: 0;
 
     .script {
-      font-family: playlist;
+      @extend .playlist;
       font-size: 2rem;
-      letter-spacing: 1px;
       text-transform: initial;
       color: $orange;
       padding-left: 3px;
@@ -19,12 +18,32 @@
   }
 
   h2 {
-    color: $orange;
     font-size: 1.25rem;
   }
 
   img {
     width: 100%;
+  }
+
+  .image-overlay {
+    position: relative;
+    text-align: center;
+
+    .image-text {
+      @extend .playlist;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      line-height: 4rem;
+      width: 100%;
+      color: $white;
+      background-color: rgba($gray-dark, 0.7);
+
+      @include media-breakpoint-only(md) {
+        font-size: 1.5rem;
+      }
+    }
   }
 
   .others {

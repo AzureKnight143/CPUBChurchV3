@@ -10,6 +10,11 @@
   src: url(../fonts/playlist-script.otf);
 }
 
+.playlist {
+  font-family: playlist;
+  letter-spacing: 1px;
+}
+
 body {
   background-color: $gray-dark;
 }

@@ -10880,17 +10880,30 @@ body.home .wrapper-navbar {
     padding: 0.75rem 0;
     margin: 0; }
     #home-wrapper h1 .script {
-      font-family: playlist;
       font-size: 2rem;
-      letter-spacing: 1px;
       text-transform: initial;
       color: #ff6c00;
       padding-left: 3px; }
   #home-wrapper h2 {
-    color: #ff6c00;
     font-size: 1.25rem; }
   #home-wrapper img {
     width: 100%; }
+  #home-wrapper .image-overlay {
+    position: relative;
+    text-align: center; }
+    #home-wrapper .image-overlay .image-text {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      font-size: 2rem;
+      line-height: 4rem;
+      width: 100%;
+      color: #fefefe;
+      background-color: rgba(77, 77, 79, 0.7); }
+      @media (min-width: 768px) and (max-width: 991.98px) {
+        #home-wrapper .image-overlay .image-text {
+          font-size: 1.5rem; } }
   @media (min-width: 992px) {
     #home-wrapper .others img {
       width: 50%; } }
@@ -10980,6 +10993,10 @@ body.home .wrapper-navbar {
 @font-face {
   font-family: playlist;
   src: url(../fonts/playlist-script.otf); }
+
+.playlist, #home-wrapper h1 .script, #home-wrapper .image-overlay .image-text {
+  font-family: playlist;
+  letter-spacing: 1px; }
 
 body {
   background-color: #4d4d4f; }

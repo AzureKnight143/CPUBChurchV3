@@ -8,7 +8,7 @@ $latest_sermon = wp_get_recent_posts( $latest_sermon_args )[0];
 wp_reset_query();
     
 $recent_posts_args = array( 
-    'numberposts' => '4',
+    'numberposts' => '5',
     'post_status' => 'publish');
 $recent_posts = wp_get_recent_posts( $recent_posts_args );
 
@@ -23,13 +23,17 @@ get_header();
         </div>
         <div class="<?php echo esc_attr( $container ); ?> content">
             <div class="row">
-                <div class="col-md mb-4 mb-md-0">
+                <div class="d-flex flex-column col-md mb-4 mb-md-0">
                     <h2>Weekly Worship Schedule</h2>
                     <h6>Sundays</h6>
                     8:30 AM Worship Service<br />
                     9:45 AM Sunday School<br />
                     11:00 AM Contemporary Worship Service<br />
                     6:06 PM CP Youth
+                    <div class="mt-auto">
+                        <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('category/sermons') ); ?>">Sermons</a>
+                        <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('contact-us') ); ?>">Contact Us</a>
+                    </div>
                 </div>  
                 <div class="col-md">
                     <?php if (has_post_thumbnail( $latest_sermon["ID"] ) ): ?>
@@ -38,8 +42,6 @@ get_header();
                             <img src="<?php echo $image[0]; ?>" alt="<?php echo $latest_sermon["post_title"]; ?>" />
                         </a>
                     <?php endif; ?>
-                    <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('category/sermons') ); ?>">Sermons</a>
-                    <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('contact-us') ); ?>">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -71,12 +73,14 @@ get_header();
         <div class="<?php echo esc_attr( $container ); ?> content">
             <div class="row">
                 <div class="col-md mb-4 mb-md-0">
-                    <a href="<?php echo esc_url( home_url('get-involved') ); ?>">
+                    <a class="image-overlay" href="<?php echo esc_url( home_url('get-involved') ); ?>">
+                        <div class="image-text">get involved</div>
                         <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/get-involved.png" alt="Get Involved" /> 
-                    </a>                  
+                    </a>
                 </div>
                 <div class="col-md">
-                    <a href="<?php echo esc_url( home_url('care-ministries') ); ?>">
+                    <a class="image-overlay" href="<?php echo esc_url( home_url('care-ministries') ); ?>">
+                        <div class="image-text">request support</div>
                         <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/request-support.png" alt="Request Support" />
                     </a>
                 </div>
@@ -88,20 +92,22 @@ get_header();
         <div class="<?php echo esc_attr( $container ); ?> content">
             <div class="row">
                 <div class="col-md mb-4 mb-md-0">
-                    <h2>Impact the World for Christ</h2>
-                    <a href="<?php echo esc_url( home_url('missions') ); ?>">
+                    <a class="image-overlay" href="<?php echo esc_url( home_url('missions') ); ?>">
+                        <div class="image-text">impact the world for Christ</div>
                         <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/missions.png" alt="Missions" />
                     </a>
                 </div>
-                <div class="col-md">
+                <div class="d-flex flex-column col-md">
                     <h2>News from College Park</h2>
                     <dl>
                     <?php foreach( $recent_posts as $recent ) { ?>
                         <dd><a href="<?php echo get_permalink($recent["ID"]); ?>"><?php echo $recent["post_title"]; ?></a></dd>
                     <?php } ?>
                     </dl>
-                    <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('category/news') ); ?>">View More</a>
-                    <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('calendar') ); ?>">Upcoming Events</a>
+                    <div class="mt-auto">
+                        <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('category/news') ); ?>">View More</a>
+                        <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('calendar') ); ?>">Upcoming Events</a>
+                    </div>
                 </div>
             </div>
         </div>
