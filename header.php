@@ -57,10 +57,13 @@
 						</div>
 
 						<div id="navbar-dropdown" class="collapse navbar-collapse mt-lg-3 mt-md-3 pt-md-2">
+							<span class="navbar-text">Connect with</span>
+							<i class="navbar-text arrow fa fa-angle-right" aria-hidden="true"></i>
+
 							<?php wp_nav_menu(
 								array(
 									'theme_location'  => 'primary',
-									'menu_class'      => 'navbar-nav',
+									'menu_class'      => 'navbar-nav ml-4 ml-lg-0',
 									'menu_id'         => 'main-menu',
 									'walker'          => new understrap_WP_Bootstrap_Navwalker(),
 								)

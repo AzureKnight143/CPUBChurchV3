@@ -10772,6 +10772,53 @@ a.skip-link {
 .gallery-caption {
   display: block; }
 
+@font-face {
+  font-family: playlist;
+  src: url(../fonts/playlist-script.otf); }
+
+.playlist, #home-wrapper h1 .script, #home-wrapper .image-overlay .image-text {
+  font-family: playlist;
+  letter-spacing: 1px; }
+
+body {
+  background-color: #4d4d4f; }
+
+button:focus {
+  outline-color: #005570; }
+
+.btn,
+.wpcf7 input[type=submit] {
+  text-transform: uppercase;
+  min-width: 8rem; }
+
+input::-webkit-input-placeholder {
+  text-transform: uppercase; }
+
+input:-ms-input-placeholder {
+  text-transform: uppercase; }
+
+input::-ms-input-placeholder {
+  text-transform: uppercase; }
+
+input::placeholder {
+  text-transform: uppercase; }
+
+h1 {
+  color: #ff6c00;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem; }
+
+h2 {
+  color: #ff6c00;
+  font-size: 1.5rem;
+  text-transform: uppercase; }
+
+h3 {
+  color: #ff6c00;
+  font-size: 1.25rem;
+  text-transform: uppercase; }
+
 body:not(.home) {
   background-image: none !important; }
 
@@ -10827,6 +10874,19 @@ body.home .wrapper-navbar {
     padding: 0 4px; }
     .navbar .social a:hover, .navbar .social a:focus {
       color: rgba(254, 254, 254, 0.75); }
+  .navbar .navbar-text {
+    font-weight: 500; }
+  .navbar .arrow {
+    color: #ff6c00;
+    font-size: 41px;
+    line-height: 24px;
+    padding-left: 8px; }
+    @media (max-width: 991.98px) {
+      .navbar .arrow {
+        position: relative;
+        top: 7px;
+        padding-top: 0;
+        padding-bottom: 0; } }
   @media (max-width: 991.98px) {
     .navbar #navbar-dropdown {
       width: 100%;
@@ -10989,50 +11049,3 @@ body.home .wrapper-navbar {
     border: 0 !important; }
     #content .calendar .simcal-default-calendar-grid .simcal-day.simcal-today > div > span:first-child:not(.simcal-events-dots) {
       background-color: #005570 !important; }
-
-@font-face {
-  font-family: playlist;
-  src: url(../fonts/playlist-script.otf); }
-
-.playlist, #home-wrapper h1 .script, #home-wrapper .image-overlay .image-text {
-  font-family: playlist;
-  letter-spacing: 1px; }
-
-body {
-  background-color: #4d4d4f; }
-
-button:focus {
-  outline-color: #005570; }
-
-.btn,
-.wpcf7 input[type=submit] {
-  text-transform: uppercase;
-  min-width: 8rem; }
-
-input::-webkit-input-placeholder {
-  text-transform: uppercase; }
-
-input:-ms-input-placeholder {
-  text-transform: uppercase; }
-
-input::-ms-input-placeholder {
-  text-transform: uppercase; }
-
-input::placeholder {
-  text-transform: uppercase; }
-
-h1 {
-  color: #ff6c00;
-  font-size: 1.75rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem; }
-
-h2 {
-  color: #ff6c00;
-  font-size: 1.5rem;
-  text-transform: uppercase; }
-
-h3 {
-  color: #ff6c00;
-  font-size: 1.25rem;
-  text-transform: uppercase; }
