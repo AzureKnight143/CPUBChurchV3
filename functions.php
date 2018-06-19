@@ -52,3 +52,35 @@ add_filter( 'wp_trim_excerpt', 'understrap_all_excerpts_get_more_link' );
 function understrap_all_excerpts_get_more_link($post_excerpt) {
     return $post_excerpt . ' ...<p class="mb-0"><a class="btn btn-primary" href="' . esc_url( get_permalink( get_the_ID() )) . '">' . __( 'Read More', 'understrap' ) . '</a></p>';
 }
+
+function understrap_post_nav() {
+    $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+    $next     = get_adjacent_post( false, '', false );
+
+    if ( ! $next && ! $previous ) {
+        return;
+    }
+    ?>
+
+    <nav class="container navigation post-navigation">
+        <h2 class="sr-only"><?php _e( 'Post navigation', 'understrap' ); ?></h2>
+        <div class="row nav-links justify-content-between">
+            <?php
+                if ( get_previous_post_link() ) {
+                    previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;Previous Post', 'Previous post link', 'understrap' ) );
+                }
+                if ( get_next_post_link() ) {
+                    next_post_link( '<span class="nav-next">%link</span>',     _x( 'Next Post&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'understrap' ) );
+                }
+            ?>
+        </div>
+    </nav>
+    <?php
+}
+
+add_filter('next_post_link', 'post_link_attributes');
+add_filter('previous_post_link', 'post_link_attributes');
+function post_link_attributes($output) {
+    return str_replace('<a href=', '<a class="btn btn-outline-primary" href=', $output);
+}
+?>
