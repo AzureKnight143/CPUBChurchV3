@@ -8,7 +8,7 @@ $latest_sermon = wp_get_recent_posts( $latest_sermon_args )[0];
 wp_reset_query();
     
 $recent_posts_args = array( 
-    'numberposts' => '5',
+    'numberposts' => '6',
     'post_status' => 'publish');
 $recent_posts = wp_get_recent_posts( $recent_posts_args );
 
@@ -21,7 +21,7 @@ get_header();
         <div class="<?php echo esc_attr( $container ); ?>">
             <h1>Connect with <span class="script">God</span></h1>
         </div>
-        <div class="<?php echo esc_attr( $container ); ?> content">
+        <div class="<?php echo esc_attr( $container ); ?> well">
             <div class="row">
                 <div class="d-flex flex-column col-md mb-4 mb-md-0">
                     <h2>Weekly Worship Schedule</h2>
@@ -48,7 +48,7 @@ get_header();
         <div class="<?php echo esc_attr( $container ); ?>">
             <h1>Connect with <span class="script">others</span></h1>
         </div>
-        <div class="<?php echo esc_attr( $container ); ?> content others text-center">
+        <div class="<?php echo esc_attr( $container ); ?> well others text-center">
             <div class="row">
                 <div class="col">
                     <a href="<?php echo esc_url( home_url('adult-ministries') ); ?>">
@@ -70,7 +70,7 @@ get_header();
         <div class="<?php echo esc_attr( $container ); ?>">
             <h1>Connect with <span class="script">ministry</span></h1>
         </div>
-        <div class="<?php echo esc_attr( $container ); ?> content">
+        <div class="<?php echo esc_attr( $container ); ?> well">
             <div class="row">
                 <div class="col-md mb-4 mb-md-0">
                     <a class="image-overlay" href="<?php echo esc_url( home_url('get-involved') ); ?>">
@@ -89,7 +89,7 @@ get_header();
         <div class="<?php echo esc_attr( $container ); ?>">
             <h1>Connect with <span class="script">the world</span></h1>
         </div>
-        <div class="<?php echo esc_attr( $container ); ?> content">
+        <div class="<?php echo esc_attr( $container ); ?> well">
             <div class="row">
                 <div class="col-md mb-4 mb-md-0">
                     <a class="image-overlay" href="<?php echo esc_url( home_url('missions') ); ?>">

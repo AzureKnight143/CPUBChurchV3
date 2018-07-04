@@ -1,9 +1,22 @@
 #right-sidebar,
 #left-sidebar {
+  background-color: $blue;
+  padding: 1.5rem;
+
   @include media-breakpoint-down(sm) {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
     border-top: 2px solid $gray-dark;
+  }
+
+  .widget {
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    background: $gray-dark;
+    margin: auto;
+    padding: 0.5rem 1rem;
   }
 
   ul {
@@ -11,7 +24,16 @@
     padding-left: 0;
 
     li {
-      padding: 0.25rem 0;
+      padding: 0.5rem;
+      border-bottom: 1px solid $white;
+
+      a {
+        color: $navbar-dark-color;
+
+        &:hover {
+          color: $navbar-dark-hover-color;
+        }
+      }
     }
   }
 
