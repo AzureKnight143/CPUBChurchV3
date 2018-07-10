@@ -22,8 +22,16 @@
   .page,
   .post {
     .wp-post-image {
-      width: 100%;
-      padding: 0 0 1rem 0;
+      &.size-large {
+        width: 100%;
+        padding: 0 0 1rem 0;
+      }
+
+      &.size-medium {
+        width: 50%;
+        padding: 0 1rem 1rem 0;
+        float: left;
+      }
     }
   }
 

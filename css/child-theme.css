@@ -10981,6 +10981,9 @@ body.home .wrapper-navbar {
   #right-sidebar .widget,
   #left-sidebar .widget {
     margin-bottom: 2rem; }
+    #right-sidebar .widget:last-child,
+    #left-sidebar .widget:last-child {
+      margin-bottom: 0; }
   #right-sidebar h3,
   #left-sidebar h3 {
     background: #4d4d4f;
@@ -11036,10 +11039,16 @@ body.home .wrapper-navbar {
 #content .entry-footer {
   display: none; }
 
-#content .page .wp-post-image,
-#content .post .wp-post-image {
+#content .page .wp-post-image.size-large,
+#content .post .wp-post-image.size-large {
   width: 100%;
   padding: 0 0 1rem 0; }
+
+#content .page .wp-post-image.size-medium,
+#content .post .wp-post-image.size-medium {
+  width: 50%;
+  padding: 0 1rem 1rem 0;
+  float: left; }
 
 #content .page-posts {
   border-top: 2px solid #4d4d4f;

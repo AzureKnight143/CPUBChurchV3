@@ -1,5 +1,5 @@
 <?php
-$categoryMeta = get_post_meta( get_the_ID(), 'category', true );
+$categoryMeta = get_field('category');
 
 if ($categoryMeta) :
     $category = get_category_by_slug( $categoryMeta );

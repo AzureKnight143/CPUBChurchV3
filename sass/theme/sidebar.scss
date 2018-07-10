@@ -11,6 +11,10 @@
 
   .widget {
     margin-bottom: 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   h3 {

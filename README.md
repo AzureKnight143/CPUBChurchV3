@@ -6,6 +6,7 @@ This is a child theme for [understrap 0.8.2](https://github.com/understrap/under
 
 It uses the following plugins:
 
-* [Simple Calendar](https://wordpress.org/plugins/google-calendar-events/)
-* [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
-* [Really Simple CAPTCHA](https://wordpress.org/plugins/really-simple-captcha/)
+- [Simple Calendar](https://wordpress.org/plugins/google-calendar-events/)
+- [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
+- [Really Simple CAPTCHA](https://wordpress.org/plugins/really-simple-captcha/)
+- [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)
