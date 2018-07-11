@@ -22,7 +22,8 @@
   .page,
   .post {
     .wp-post-image {
-      &.size-large {
+      &.size-large,
+      &.size- {
         width: 100%;
         padding: 0 0 1rem 0;
       }

@@ -1,14 +1,13 @@
 <?php
-$categoryMeta = get_field('category');
+$categoryIdMeta = get_field('category');
 
-if ($categoryMeta) :
-    $category = get_category_by_slug( $categoryMeta );
-    $categoryLink = get_category_link( $category->cat_ID );
+if ($categoryIdMeta) :
+    $categoryLink = get_category_link( $categoryIdMeta );
 
     $category_posts_args = array(
         'post_status' => 'publish',
         'posts_per_page' => 5,
-        'category_name' => $category->slug);
+        'cat' => $categoryIdMeta);
     $category_posts = new WP_Query( $category_posts_args );
 ?>
 

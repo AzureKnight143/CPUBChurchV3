@@ -11039,8 +11039,9 @@ body.home .wrapper-navbar {
 #content .entry-footer {
   display: none; }
 
-#content .page .wp-post-image.size-large,
-#content .post .wp-post-image.size-large {
+#content .page .wp-post-image.size-large, #content .page .wp-post-image.size-,
+#content .post .wp-post-image.size-large,
+#content .post .wp-post-image.size- {
   width: 100%;
   padding: 0 0 1rem 0; }
 

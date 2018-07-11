@@ -83,4 +83,17 @@ add_filter('previous_post_link', 'post_link_attributes');
 function post_link_attributes($output) {
     return str_replace('<a href=', '<a class="btn btn-outline-primary" href=', $output);
 }
+
+function acf_load_category_field_choices( $field ) {   
+    $field['choices'] = array();
+
+    $categories = get_categories();
+    foreach ($categories as $category) {
+        $field['choices'][$category->term_id] = $category->name;
+    }
+
+    return $field;  
+}
+
+add_filter('acf/load_field/name=category', 'acf_load_category_field_choices');
 ?>
