@@ -20,6 +20,11 @@ function theme_enqueue_styles() {
     }
 }
 
+add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+function add_child_theme_textdomain() {
+    load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
+}
+
 add_filter( 'theme_page_templates', 'remove_page_templates' );
 function remove_page_templates( $templates ) {
     unset( $templates['page-templates/blank.php'] );
