@@ -66,6 +66,7 @@
 									'menu_class'      => 'navbar-nav ml-4 ml-lg-0',
 									'menu_id'         => 'main-menu',
 									'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+									"depth" 		  => 2
 								)
 							); ?>
 

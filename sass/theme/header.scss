@@ -125,11 +125,6 @@ body.home {
 
     @include media-breakpoint-up(lg) {
       border-right: 1px solid $orange;
-
-      a {
-        padding-top: 0;
-        padding-bottom: 0;
-      }
     }
 
     .dropdown-menu {

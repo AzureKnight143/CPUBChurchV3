@@ -10923,10 +10923,7 @@ body.home .wrapper-navbar {
       border-right: 0; }
     @media (min-width: 992px) {
       .navbar .navbar-nav .nav-item {
-        border-right: 1px solid #ff6c00; }
-        .navbar .navbar-nav .nav-item a {
-          padding-top: 0;
-          padding-bottom: 0; } }
+        border-right: 1px solid #ff6c00; } }
     .navbar .navbar-nav .nav-item .dropdown-menu {
       margin-top: 10px; }
       .navbar .navbar-nav .nav-item .dropdown-menu .nav-item {

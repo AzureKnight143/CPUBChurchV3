@@ -7,26 +7,25 @@ get_header();
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 		<div class="row">
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
-                <main class="site-main" id="main">
-                    <?php 
-                    while ( have_posts() ) : the_post();
-                        get_template_part( 'loop-templates/content', 'page' );
+            <main class="site-main" id="main">
+                <?php 
+                while ( have_posts() ) : the_post();
+                    get_template_part( 'loop-templates/content', 'page' );
 
-                        if (isset($displayChildren) && $displayChildren) :
-                             include get_stylesheet_directory() . '/page-templates/sections/children.php';
-                        endif;
+                    if (isset($displayChildren) && $displayChildren) :
+                            include get_stylesheet_directory() . '/page-templates/sections/children.php';
+                    endif;
 
-                        if (isset($displayCategoryPosts) && $displayCategoryPosts) :
-                            include get_stylesheet_directory() . '/page-templates/sections/posts.php';
-                        endif;
+                    if (isset($displayCategoryPosts) && $displayCategoryPosts) :
+                        include get_stylesheet_directory() . '/page-templates/sections/posts.php';
+                    endif;
 
-                        if ( comments_open() || get_comments_number() ) :
-                            comments_template();
-                        endif;
-                    endwhile; 
-                    ?>
-                </main>
-            </div>           
+                    if ( comments_open() || get_comments_number() ) :
+                        comments_template();
+                    endif;
+                endwhile; 
+                ?>
+            </main>           
             <?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
         </div>
 	</div>
