@@ -15,7 +15,9 @@ if ( $parent->have_posts() ) :
     <div class="col-lg-4 col-6">
         <div class="card mb-4">
             <a href="<?php esc_url( the_permalink() ) ?>">
-                <?php echo get_the_post_thumbnail( $post->ID, 'large', array( 'class' => 'card-img-top' ) ); ?>
+                <?php if (get_field('thumbnail_image')) { ?>
+                    <img src="<?php the_field('thumbnail_image'); ?>" class="card-img-top" alt="<?php the_title() ?>" />
+                <?php } ?>
             </a>
             <div class="card-body">
                 <a href="<?php esc_url( the_permalink() ) ?>">
