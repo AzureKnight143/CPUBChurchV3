@@ -46,7 +46,7 @@
 							<div class="social ml-lg-2 mr-3">
 								<a href="https://www.facebook.com/cpubchurch" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 								<a href="https://twitter.com/cpubchurch" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-								<a href="<?php echo esc_url( home_url('feed') ); ?>" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a>
+								<a href="<?php echo esc_url( home_url('newsletters') ); ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
 							</div>
 
 							<?php get_search_form(true) ?>
