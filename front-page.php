@@ -28,8 +28,7 @@ get_header();
                     <h6>Sundays</h6>
                     8:30 AM Worship Service<br />
                     9:45 AM Sunday School<br />
-                    11:00 AM Contemporary Worship Service<br />
-                    6:06 PM CP Youth
+                    11:00 AM Contemporary Worship Service
                     <div class="mt-auto">
                         <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('category/sermons') ); ?>">Sermons</a>
                         <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('contact-us') ); ?>">Contact Us</a>
@@ -56,7 +55,7 @@ get_header();
                     </a>
                 </div>
                 <div class="col">
-                    <a href="<?php echo esc_url( home_url('student-ministries') ); ?>">
+                    <a href="<?php echo esc_url( home_url('youth-ministries') ); ?>">
                         <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/cp-youth.png" alt="Youth" /> 
                     </a>
                 </div>
