@@ -91,7 +91,7 @@ get_header();
         <div class="<?php echo esc_attr( $container ); ?> well">
             <div class="row">
                 <div class="col-md mb-4 mb-md-0">
-                    <a class="image-overlay" href="<?php echo esc_url( home_url('missions') ); ?>">
+                    <a class="image-overlay" href="<?php echo esc_url( home_url('missions-ministries') ); ?>">
                         <div class="image-text">impact the world for Christ</div>
                         <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/missions.png" alt="Missions" />
                     </a>
@@ -105,7 +105,7 @@ get_header();
                     </dl>
                     <div class="mt-auto">
                         <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('category/news') ); ?>">View More</a>
-                        <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('calendar') ); ?>">Upcoming Events</a>
+                        <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('calendar/upcoming-events/') ); ?>">Upcoming Events</a>
                     </div>
                 </div>
             </div>
