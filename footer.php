@@ -11,7 +11,7 @@
                         <div class="col-md-12">
                             <footer class="site-footer" id="colophon">
                                 <div class="site-info">
-                                    1945 College Ave., Huntington, IN 46750 <span class="pipe">|</span> (260) 356-2642 <span class="pipe">|</span> <a href="https://goo.gl/maps/xZGMzXRckbo" target="_blank">Map &amp; Directions</a>
+                                    1945 College Ave., Huntington, IN 46750 <span class="pipe">|</span> (260)&nbsp;356&#8209;2642 <span class="pipe">|</span> <a href="https://goo.gl/maps/xZGMzXRckbo" target="_blank">Map&nbsp;&amp;&nbsp;Directions</a>
                                     <br />
                                     <?php echo date("Y"); ?> &copy; College Park Church - All Rights Reserved
                                 </div>

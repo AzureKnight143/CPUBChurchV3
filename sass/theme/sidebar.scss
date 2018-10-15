@@ -1,5 +1,4 @@
-#right-sidebar,
-#left-sidebar {
+#right-sidebar {
   background-color: $blue;
   padding: 1.5rem;
 
@@ -37,24 +36,6 @@
         &:hover {
           color: $navbar-dark-hover-color;
         }
-      }
-    }
-  }
-
-  .simcal-default-calendar-list {
-    padding: 0;
-
-    .post-edit-link {
-      display: none;
-    }
-
-    p,
-    .simcal-events,
-    .simcal-event {
-      margin: 0;
-
-      .simcal-event-details {
-        font-size: 1rem;
       }
     }
   }

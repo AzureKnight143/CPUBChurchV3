@@ -12,6 +12,11 @@ $recent_posts_args = array(
     'post_status' => 'publish');
 $recent_posts = wp_get_recent_posts( $recent_posts_args );
 
+$recent_missions_posts_args = array( 
+    'numberposts' => '6',
+    'post_status' => 'publish');
+$recent_missions_posts = wp_get_recent_posts( $recent_missions_posts_args );
+
 $container = get_theme_mod( 'understrap_container_type' );
 get_header();
 ?>
@@ -97,15 +102,40 @@ get_header();
                     </a>
                 </div>
                 <div class="d-flex flex-column col-md">
-                    <h2>News from College Park</h2>
+                    <h2>Opportunities for Impact</h2>
+                    <dl>
+                    <?php foreach( $recent_missions_posts as $recent ) { ?>
+                        <dd><a href="<?php echo get_permalink($recent["ID"]); ?>"><?php echo $recent["post_title"]; ?></a></dd>
+                    <?php } ?>
+                    </dl>
+                    <div class="mt-auto">
+                        <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('missions-ministries') ); ?>">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="<?php echo esc_attr( $container ); ?>">
+            <h1>Connect with <span class="script">College Park</span></h1>
+        </div>
+        <div class="<?php echo esc_attr( $container ); ?> well">
+            <div class="row">
+                <div class="col-md mb-4 mb-md-0">
+                    <h2>Latest News</h2>
                     <dl>
                     <?php foreach( $recent_posts as $recent ) { ?>
                         <dd><a href="<?php echo get_permalink($recent["ID"]); ?>"><?php echo $recent["post_title"]; ?></a></dd>
                     <?php } ?>
                     </dl>
                     <div class="mt-auto">
-                        <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('category/news') ); ?>">View More</a>
-                        <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('calendar/upcoming-events/') ); ?>">Upcoming Events</a>
+                        <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('category/news') ); ?>">View All News</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-column col-md">
+                    <?php if ( is_active_sidebar( 'home-upcoming-events' ) ) : ?>
+                        <?php dynamic_sidebar( 'home-upcoming-events' ); ?>
+                    <?php endif; ?>
+                    <div class="mt-auto">
+                        <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('calendar/upcoming-events/') ); ?>">View All Events</a>
                     </div>
                 </div>
             </div>

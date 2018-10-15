@@ -44,6 +44,12 @@ h3 {
   text-transform: uppercase;
 }
 
+ul,
+ol,
+dl {
+  margin-bottom: 0.6rem;
+}
+
 @import "header";
 @import "footer";
 @import "front-page";

@@ -28,3 +28,34 @@
     }
   }
 }
+
+.widget {
+  .simcal-default-calendar-list {
+    padding: 0;
+
+    .post-edit-link {
+      display: none;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    ul.simcal-events {
+      margin: 0;
+      padding: 0;
+
+      li.simcal-event {
+        margin-bottom: 0.5rem;
+
+        .simcal-event-details {
+          font-size: 1rem;
+
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
