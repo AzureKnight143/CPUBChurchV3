@@ -89,6 +89,7 @@ function post_link_attributes($output) {
     return str_replace('<a href=', '<a class="btn btn-outline-primary" href=', $output);
 }
 
+add_filter('acf/load_field/name=category', 'acf_load_category_field_choices');
 function acf_load_category_field_choices( $field ) {   
     $field['choices'] = array();
 
@@ -100,5 +101,25 @@ function acf_load_category_field_choices( $field ) {
     return $field;  
 }
 
-add_filter('acf/load_field/name=category', 'acf_load_category_field_choices');
+add_action( 'widgets_init', 'remove_sidebars', 11 );
+function remove_sidebars() {
+    unregister_sidebar('herocanvas');
+    unregister_sidebar('hero');
+    unregister_sidebar('statichero');
+    unregister_sidebar('footerfull');
+    unregister_sidebar('left-sidebar');
+}
+
+add_action( 'widgets_init', 'home_widget_init' );
+function home_widget_init() {
+    register_sidebar( array(
+        'name'          => __('Home Upcoming Events', 'understrap' ),
+		'id'            => 'home-upcoming-events',
+		'description'   => __( 'Home Upcoming Events widget area', 'understrap' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2>',
+        'after_title'   => '</h2>',
+    ) );
+}
 ?>

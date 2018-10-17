@@ -10842,6 +10842,11 @@ h3 {
   font-size: 1.25rem;
   text-transform: uppercase; }
 
+ul,
+ol,
+dl {
+  margin-bottom: 0.6rem; }
+
 body:not(.home) {
   background-image: none !important; }
 
@@ -10988,61 +10993,32 @@ body.home .wrapper-navbar {
     #home-wrapper .others img {
       width: 50%; } }
 
-#right-sidebar,
-#left-sidebar {
+#right-sidebar {
   background-color: #0c5b74;
   padding: 1.5rem; }
   @media (max-width: 767.98px) {
-    #right-sidebar,
-    #left-sidebar {
+    #right-sidebar {
       margin-top: 1.5rem;
       padding-top: 1.5rem;
       border-top: 2px solid #4d4d4f; } }
-  #right-sidebar .widget,
-  #left-sidebar .widget {
+  #right-sidebar .widget {
     margin-bottom: 2rem; }
-    #right-sidebar .widget:last-child,
-    #left-sidebar .widget:last-child {
+    #right-sidebar .widget:last-child {
       margin-bottom: 0; }
-  #right-sidebar h3,
-  #left-sidebar h3 {
+  #right-sidebar h3 {
     background: #4d4d4f;
     margin: auto;
     padding: 0.5rem 1rem; }
-  #right-sidebar ul,
-  #left-sidebar ul {
+  #right-sidebar ul {
     list-style: none;
     padding-left: 0; }
-    #right-sidebar ul li,
-    #left-sidebar ul li {
+    #right-sidebar ul li {
       padding: 0.5rem;
       border-bottom: 1px solid #fefefe; }
-      #right-sidebar ul li a,
-      #left-sidebar ul li a {
+      #right-sidebar ul li a {
         color: #fefefe; }
-        #right-sidebar ul li a:hover,
-        #left-sidebar ul li a:hover {
+        #right-sidebar ul li a:hover {
           color: rgba(254, 254, 254, 0.75); }
-  #right-sidebar .simcal-default-calendar-list,
-  #left-sidebar .simcal-default-calendar-list {
-    padding: 0; }
-    #right-sidebar .simcal-default-calendar-list .post-edit-link,
-    #left-sidebar .simcal-default-calendar-list .post-edit-link {
-      display: none; }
-    #right-sidebar .simcal-default-calendar-list p,
-    #right-sidebar .simcal-default-calendar-list .simcal-events,
-    #right-sidebar .simcal-default-calendar-list .simcal-event,
-    #left-sidebar .simcal-default-calendar-list p,
-    #left-sidebar .simcal-default-calendar-list .simcal-events,
-    #left-sidebar .simcal-default-calendar-list .simcal-event {
-      margin: 0; }
-      #right-sidebar .simcal-default-calendar-list p .simcal-event-details,
-      #right-sidebar .simcal-default-calendar-list .simcal-events .simcal-event-details,
-      #right-sidebar .simcal-default-calendar-list .simcal-event .simcal-event-details,
-      #left-sidebar .simcal-default-calendar-list p .simcal-event-details,
-      #left-sidebar .simcal-default-calendar-list .simcal-events .simcal-event-details,
-      #left-sidebar .simcal-default-calendar-list .simcal-event .simcal-event-details {
-        font-size: 1rem; }
 
 #primary,
 .well {
@@ -11096,3 +11072,19 @@ body.home .wrapper-navbar {
     border: 0 !important; }
     #content .calendar .simcal-default-calendar-grid .simcal-day.simcal-today > div > span:first-child:not(.simcal-events-dots) {
       background-color: #0c5b74 !important; }
+
+.widget .simcal-default-calendar-list {
+  padding: 0; }
+  .widget .simcal-default-calendar-list .post-edit-link {
+    display: none; }
+  .widget .simcal-default-calendar-list p {
+    margin: 0; }
+  .widget .simcal-default-calendar-list ul.simcal-events {
+    margin: 0;
+    padding: 0; }
+    .widget .simcal-default-calendar-list ul.simcal-events li.simcal-event {
+      margin-bottom: 0.5rem; }
+      .widget .simcal-default-calendar-list ul.simcal-events li.simcal-event .simcal-event-details {
+        font-size: 1rem; }
+        .widget .simcal-default-calendar-list ul.simcal-events li.simcal-event .simcal-event-details p {
+          margin: 0; }
