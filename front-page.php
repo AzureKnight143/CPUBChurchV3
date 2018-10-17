@@ -36,6 +36,7 @@ get_header();
                     11:00 AM Contemporary Worship Service
                     <div class="mt-auto">
                         <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('category/sermons') ); ?>">Sermons</a>
+                        <a class="btn btn-primary btn-sm mt-3" href="https://www.rightnowmedia.org/Account/Invite/CollegeParkChurch" target="_blank">RightNow Media</a>
                         <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('contact-us') ); ?>">Contact Us</a>
                     </div>
                 </div>  
