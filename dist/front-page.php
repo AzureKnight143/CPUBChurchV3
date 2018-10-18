@@ -14,7 +14,8 @@ $recent_posts = wp_get_recent_posts( $recent_posts_args );
 
 $recent_missions_posts_args = array( 
     'numberposts' => '6',
-    'post_status' => 'publish');
+    'post_status' => 'publish',
+    'category_name' => 'missions');
 $recent_missions_posts = wp_get_recent_posts( $recent_missions_posts_args );
 
 $container = get_theme_mod( 'understrap_container_type' );
