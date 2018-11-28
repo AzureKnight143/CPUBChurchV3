@@ -11014,7 +11014,8 @@ body.home .wrapper-navbar {
     padding-left: 0; }
     #right-sidebar ul li {
       padding: 0.5rem;
-      border-bottom: 1px solid #fefefe; }
+      border-bottom: 1px solid #fefefe;
+      color: #fefefe; }
       #right-sidebar ul li a {
         color: #fefefe; }
         #right-sidebar ul li a:hover {
@@ -11051,6 +11052,9 @@ body.home .wrapper-navbar {
   border-top: 2px solid #4d4d4f;
   margin-top: 1.5rem;
   padding-top: 1.5rem; }
+
+#content .wp-video {
+  width: 100% !important; }
 
 #content .mejs-container {
   margin: 1rem 0; }
