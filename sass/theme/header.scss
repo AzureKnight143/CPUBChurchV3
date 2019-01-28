@@ -43,8 +43,17 @@ body.home {
     font-size: 2rem;
     line-height: 1.75rem;
 
+    @include media-breakpoint-down(xs) {
+      font-size: 1.7rem;
+    }
+
     .logo {
       $logo-size: 100px;
+
+      @include media-breakpoint-down(xs) {
+        $logo-size: 80px;
+      }
+
       width: $logo-size;
       height: $logo-size;
       max-width: $logo-size;
@@ -83,6 +92,12 @@ body.home {
       @include hover-focus {
         color: $navbar-dark-hover-color;
       }
+    }
+  }
+
+  #searchform {
+    @include media-breakpoint-down(xs) {
+      width: 40%;
     }
   }
 
