@@ -10879,10 +10879,13 @@ body.home .wrapper-navbar {
   .navbar .navbar-brand {
     font-size: 2rem;
     line-height: 1.75rem; }
+    @media (max-width: 575.98px) {
+      .navbar .navbar-brand {
+        font-size: 1.7rem; } }
     .navbar .navbar-brand .logo {
-      width: 100px;
-      height: 100px;
-      max-width: 100px; }
+      width: 80px;
+      height: 80px;
+      max-width: 80px; }
     .navbar .navbar-brand a {
       color: #fefefe; }
       .navbar .navbar-brand a:hover {
@@ -10902,6 +10905,9 @@ body.home .wrapper-navbar {
     padding: 0 4px; }
     .navbar .social a:hover, .navbar .social a:focus {
       color: rgba(254, 254, 254, 0.75); }
+  @media (max-width: 575.98px) {
+    .navbar #searchform {
+      width: 40%; } }
   .navbar .navbar-text {
     font-weight: 500; }
   .navbar .arrow {
@@ -10964,11 +10970,17 @@ body.home .wrapper-navbar {
     font-weight: 300;
     padding: 0.75rem 0;
     margin: 0; }
+    @media (max-width: 575.98px) {
+      #home-wrapper h1 {
+        font-size: 1.2rem; } }
     #home-wrapper h1 .script {
       font-size: 2rem;
       text-transform: initial;
       color: #ff6c00;
       padding-left: 3px; }
+      @media (max-width: 575.98px) {
+        #home-wrapper h1 .script {
+          font-size: 1.7rem; } }
   #home-wrapper h2 {
     font-size: 1.25rem; }
   #home-wrapper img {
@@ -10986,7 +10998,7 @@ body.home .wrapper-navbar {
       width: 100%;
       color: #fefefe;
       background-color: rgba(77, 77, 79, 0.7); }
-      @media (min-width: 768px) and (max-width: 991.98px) {
+      @media (max-width: 991.98px) {
         #home-wrapper .image-overlay .image-text {
           font-size: 1.5rem; } }
   @media (min-width: 992px) {
@@ -11092,3 +11104,5 @@ body.home .wrapper-navbar {
         font-size: 1rem; }
         .widget .simcal-default-calendar-list ul.simcal-events li.simcal-event .simcal-event-details p {
           margin: 0; }
+
+/*# sourceMappingURL=child-theme.css.map */
