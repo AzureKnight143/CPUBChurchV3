@@ -1,4 +1,8 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 function understrap_remove_scripts() {
     wp_dequeue_style( 'understrap-styles' );
