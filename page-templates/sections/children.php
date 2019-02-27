@@ -4,6 +4,7 @@ $args = array(
     'post_type'      => 'page',
     'posts_per_page' => -1,
     'post_parent'    => $post->ID,
+    'orderby'        => 'menu_order',
     'order'          => 'ASC'
     );
 
