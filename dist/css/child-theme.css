@@ -11065,6 +11065,9 @@ body.home .wrapper-navbar {
   margin-top: 1.5rem;
   padding-top: 1.5rem; }
 
+#content table {
+  width: 100%; }
+
 #content .wp-video {
   width: 100% !important; }
 
