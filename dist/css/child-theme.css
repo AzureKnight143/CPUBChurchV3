@@ -11038,46 +11038,40 @@ body.home .wrapper-navbar {
   background-color: #fefefe;
   padding: 1.5rem; }
 
-#content .entry-meta {
-  display: inline-block;
-  margin-bottom: 0.25rem; }
-  #content .entry-meta time:not(.entry-date),
-  #content .entry-meta .byline {
+#content {
+  word-wrap: break-word; }
+  #content .entry-meta {
+    display: inline-block;
+    margin-bottom: 0.25rem; }
+    #content .entry-meta time:not(.entry-date),
+    #content .entry-meta .byline {
+      display: none; }
+  #content .entry-footer {
     display: none; }
-
-#content .entry-footer {
-  display: none; }
-
-#content .page .wp-post-image.size-large, #content .page .wp-post-image.size-,
-#content .post .wp-post-image.size-large,
-#content .post .wp-post-image.size- {
-  width: 100%;
-  padding: 0 0 1rem 0; }
-
-#content .page .wp-post-image.size-medium,
-#content .post .wp-post-image.size-medium {
-  width: 50%;
-  padding: 0 1rem 1rem 0;
-  float: left; }
-
-#content .page-posts {
-  border-top: 2px solid #4d4d4f;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem; }
-
-#content table {
-  width: 100%; }
-
-#content .wp-video {
-  width: 100% !important; }
-
-#content .mejs-container {
-  margin: 1rem 0; }
-
-#content .wpcf7 {
-  max-width: 100%; }
-  #content .wpcf7 .wpcf7-response-output {
-    margin: 0; }
+  #content .page .wp-post-image.size-large, #content .page .wp-post-image.size-,
+  #content .post .wp-post-image.size-large,
+  #content .post .wp-post-image.size- {
+    width: 100%;
+    padding: 0 0 1rem 0; }
+  #content .page .wp-post-image.size-medium,
+  #content .post .wp-post-image.size-medium {
+    width: 50%;
+    padding: 0 1rem 1rem 0;
+    float: left; }
+  #content .page-posts {
+    border-top: 2px solid #4d4d4f;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem; }
+  #content table {
+    width: 100%; }
+  #content .wp-video {
+    width: 100% !important; }
+  #content .mejs-container {
+    margin: 1rem 0; }
+  #content .wpcf7 {
+    max-width: 100%; }
+    #content .wpcf7 .wpcf7-response-output {
+      margin: 0; }
 
 #content .calendar .entry-meta,
 #content .calendar .post-edit-link {
