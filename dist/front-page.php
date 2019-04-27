@@ -1,11 +1,10 @@
 <?php
-$latest_sermon_args = array( 
+$latest_featured_args = array( 
     'numberposts' => '1',
     'post_status' => 'publish', 
     'meta_key' => '_thumbnail_id',
-    'category_name' => 'sermons');
-$latest_sermon = wp_get_recent_posts( $latest_sermon_args )[0];
-wp_reset_query();
+    'category_name' => 'featured');
+$latest_featured = wp_get_recent_posts( $latest_featured_args )[0];
     
 $recent_posts_args = array( 
     'numberposts' => '6',
@@ -42,10 +41,10 @@ get_header();
                     </div>
                 </div>  
                 <div class="col-md">
-                    <?php if (has_post_thumbnail( $latest_sermon["ID"] ) ): ?>
-                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $latest_sermon["ID"] ), 'single-post-thumbnail' ); ?>
-                        <a href="<?php echo get_permalink($latest_sermon["ID"]); ?>">
-                            <img src="<?php echo $image[0]; ?>" alt="<?php echo $latest_sermon["post_title"]; ?>" />
+                    <?php if (has_post_thumbnail( $latest_featured["ID"] ) ): ?>
+                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $latest_featured["ID"] ), 'single-post-thumbnail' ); ?>
+                        <a href="<?php echo get_permalink($latest_featured["ID"]); ?>">
+                            <img src="<?php echo $image[0]; ?>" alt="<?php echo $latest_featured["post_title"]; ?>" />
                         </a>
                     <?php endif; ?>
                 </div>
