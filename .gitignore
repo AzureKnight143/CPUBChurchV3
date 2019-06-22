@@ -6,6 +6,7 @@ dist-product
 npm-debug.log
 /vendor/
 .vscode
+package-lock.json
 
 css
 js
