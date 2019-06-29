@@ -8,6 +8,9 @@ npm-debug.log
 .vscode
 package-lock.json
 
+dist/gulp*
+dist/package.json
+
 css
 js
 src
