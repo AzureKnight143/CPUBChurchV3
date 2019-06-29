@@ -288,7 +288,7 @@ gulp.task(
     console.log({ ignorePaths, ignoreFiles });
 
     return gulp
-      .src(["**/*", ...ignorePaths, ...ignoreFiles, "*"], { buffer: false })
+      .src(["**/*", ...ignorePaths, ...ignoreFiles, "*"])
       .pipe(
         replace(
           "/js/jquery.slim.min.js",
