@@ -152,7 +152,7 @@ gulp.task("scripts", function() {
 
     // Adding currently empty javascript file to add on for your own themes´ customizations
     // Please add any customizations to this .js file only!
-    `${paths.dev}js/custom-javascript.js`
+    `${paths.dev}/js/custom-javascript.js`
   ];
   gulp
     .src(scripts, { allowEmpty: true })
@@ -222,11 +222,6 @@ gulp.task("copy-assets", function() {
   gulp
     .src(`${paths.node}popper.js/dist/umd/popper.js`)
     .pipe(gulp.dest(`${paths.js}${paths.vendor}`));
-
-  // UnderStrap SCSS files
-  gulp
-    .src(`${paths.node}understrap/sass/**/*.scss`)
-    .pipe(gulp.dest(`${paths.dev}/sass/understrap`));
 
   return stream;
 });

@@ -1,8 +1,7 @@
-@import "theme/child_theme_variables"; // <------- Add your variables into this file. Also add variables to overwrite Bootstrap variables here
-@import "assets/bootstrap4"; // <------- Loads Bootstrap4
-@import "../src/sass/understrap/understrap/understrap"; // <------- Loads the UnderStrap defaults. Just a few classes to incorporate BS in WP
-@import "../src/sass/understrap/understrap/woocommerce"; // <------- Loads WooCommerce style fixes. Comment out if you aren't using WooCommerce
-@import "assets/font-awesome"; // <------- Font Awesome Icon font
-@import "assets/underscores"; // <------- Underscores media styles
-@import "theme/child_theme"; // <------- Add your styles into this file
-@import "../src/sass/understrap/theme/contact-form7"; // <------- Loads some basic styling for contact form 7 plugin
+@import "theme/child_theme_variables";
+@import "assets/bootstrap4";
+@import "../../understrap/sass/understrap/understrap";
+@import "assets/font-awesome";
+@import "assets/underscores";
+@import "theme/child_theme";
+@import "../../understrap/sass/theme/contact-form7";

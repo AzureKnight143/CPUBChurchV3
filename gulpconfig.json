@@ -1,6 +1,6 @@
 {
   "browserSyncOptions" : {
-    "proxy": "localhost/cpubchurch/",
+    "proxy": "localhost/collegepark/",
     "notify": false
   },
   "browserSyncWatchFiles" : [
