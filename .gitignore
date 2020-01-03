@@ -1,17 +1,7 @@
-.sass-cache
-bower_components
 node_modules
-understrap.zip
-dist-product
-npm-debug.log
-/vendor/
 .vscode
 package-lock.json
 
-dist/gulp*
-dist/package.json
-
 css
 js
-src
 fonts/*wesome*
