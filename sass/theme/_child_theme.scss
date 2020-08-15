@@ -50,6 +50,10 @@ dl {
   margin-bottom: 0.6rem;
 }
 
+:focus {
+  outline: none;
+}
+
 @import "header";
 @import "footer";
 @import "front-page";

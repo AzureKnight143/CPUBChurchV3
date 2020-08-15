@@ -11672,6 +11672,9 @@ ol,
 dl {
   margin-bottom: 0.6rem; }
 
+:focus {
+  outline: none; }
+
 body:not(.home) {
   background-image: none !important; }
 
