@@ -32,7 +32,6 @@ get_header();
                     <h2>Weekly Worship Schedule</h2>
                     <h6>Sundays</h6>
                     8:30 AM Worship Service<br />
-                    9:45 AM Sunday School<br />
                     11:00 AM Contemporary Worship Service
                     <div class="mt-auto">
                         <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('category/sermons') ); ?>">Sermons</a>
