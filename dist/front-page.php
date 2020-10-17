@@ -1,11 +1,11 @@
-<?php
-$latest_featured_args = array( 
+<?php  
+$sermons_args = array( 
     'numberposts' => '1',
     'post_status' => 'publish', 
     'meta_key' => '_thumbnail_id',
-    'category_name' => 'featured');
-$latest_featured = wp_get_recent_posts( $latest_featured_args )[0];
-    
+    'post_type' => 'page');
+$sermons = wp_get_recent_posts( $sermons_args )[0];
+
 $recent_posts_args = array( 
     'numberposts' => '6',
     'post_status' => 'publish');
@@ -34,16 +34,16 @@ get_header();
                     8:30 AM Worship Service<br />
                     11:00 AM Contemporary Worship Service
                     <div class="mt-auto">
-                        <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('category/sermons') ); ?>">Sermons</a>
+                        <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('sermons') ); ?>">Sermons</a>
                         <a class="btn btn-primary btn-sm mt-3" href="https://www.rightnowmedia.org/Account/Invite/CollegeParkChurch" target="_blank">RightNow Media</a>
                         <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('contact-us') ); ?>">Contact Us</a>
                     </div>
                 </div>  
                 <div class="col-md">
-                    <?php if (has_post_thumbnail( $latest_featured["ID"] ) ): ?>
-                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $latest_featured["ID"] ), 'single-post-thumbnail' ); ?>
-                        <a href="<?php echo get_permalink($latest_featured["ID"]); ?>">
-                            <img src="<?php echo $image[0]; ?>" alt="<?php echo $latest_featured["post_title"]; ?>" />
+                    <?php if (has_post_thumbnail( $sermons["ID"] ) ): ?>
+                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $sermons["ID"] ), 'single-post-thumbnail' ); ?>
+                        <a href="<?php echo get_permalink($sermons["ID"]); ?>">
+                            <img src="<?php echo $image[0]; ?>" alt="<?php echo $sermons["post_title"]; ?>" />
                         </a>
                     <?php endif; ?>
                 </div>

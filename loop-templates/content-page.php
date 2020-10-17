@@ -5,7 +5,9 @@
 		<?php } ?>
 	</header>
 
-	<?php echo get_the_post_thumbnail( $post->ID, get_field('featured_image_size') ); ?>
+	<?php if (get_field('featured_image_size') != "none") {
+		echo get_the_post_thumbnail( $post->ID, get_field('featured_image_size') ); 
+	} ?>
 
 	<div class="entry-content">
         <?php if (get_field('subtitle')) { ?>
