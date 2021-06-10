@@ -31,8 +31,8 @@ get_header();
                 <div class="d-flex flex-column col-md mb-4 mb-md-0">
                     <h2>Weekly Worship Schedule</h2>
                     <h6>Sundays</h6>
-                    8:30 AM Worship Service<br />
-                    11:00 AM Contemporary Worship Service
+                    Traditional Worship: 9:00 AM<br />
+                    Contemporary Worship: 10:30 AM
                     <div class="mt-auto">
                         <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('sermons') ); ?>">Sermons</a>
                         <a class="btn btn-primary btn-sm mt-3" href="https://www.rightnowmedia.org/Account/Invite/CollegeParkChurch" target="_blank">RightNow Media</a>
