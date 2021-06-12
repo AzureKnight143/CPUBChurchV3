@@ -125,7 +125,6 @@ gulp.task("watch-bs", gulp.parallel("browser-sync", "watch", "scripts"));
 // Run:
 // gulp copy-assets.
 // Copy all needed dependency assets files from node_modules assets to themes /js, /scss and /fonts folder. Run this task after npm install or npm update
-
 gulp.task("copy-assets", function() {
   // Copy all Font Awesome Fonts
   return gulp

@@ -1,32 +1,25 @@
 {
-  "name": "understrap-child",
+  "name": "cpubchurchv2",
   "version": "0.5.5",
-  "description": "Basic Child Theme for UnderStrap Theme Framework: https://github.com/holger1411/understrap",
   "scripts": {
+    "watch": "gulp watch-bs",
+    "dist": "gulp dist",
     "postinstall": "gulp copy-assets"
   },
   "dependencies": {
-    "bootstrap": "^4.5.2",
-    "browser-sync": "^2.26.12",
-    "del": "^5.1.0",
+    "bootstrap": "^4.6.0",
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
     "font-awesome": "^4.7.0",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
-    "gulp-clone": "^2.0.1",
     "gulp-concat": "^2.6.1",
-    "gulp-merge": "^0.1.1",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-sequence": "^1.0.0",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-watch": "^5.0.1",
-    "merge2": "^1.4.1",
-    "node-sass": "^4.14.1",
-    "popper.js": "^1.16.1",
-    "run-sequence": "^2.2.1",
     "undescores-for-npm": "^1.0.0"
   }
 }
