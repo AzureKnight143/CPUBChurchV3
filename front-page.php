@@ -1,22 +1,4 @@
 <?php  
-$sermons_args = array( 
-    'numberposts' => '1',
-    'post_status' => 'publish', 
-    'meta_key' => '_thumbnail_id',
-    'post_type' => 'page');
-$sermons = wp_get_recent_posts( $sermons_args )[0];
-
-$recent_posts_args = array( 
-    'numberposts' => '6',
-    'post_status' => 'publish');
-$recent_posts = wp_get_recent_posts( $recent_posts_args );
-
-$recent_missions_posts_args = array( 
-    'numberposts' => '6',
-    'post_status' => 'publish',
-    'category_name' => 'missions');
-$recent_missions_posts = wp_get_recent_posts( $recent_missions_posts_args );
-
 $container = get_theme_mod( 'understrap_container_type' );
 get_header();
 ?>
@@ -24,120 +6,25 @@ get_header();
 <div class="wrapper" id="home-wrapper">
     <main class="site-main" id="main">
         <div class="<?php echo esc_attr( $container ); ?>">
-            <h1>Connect with <span class="script">God</span></h1>
-        </div>
-        <div class="<?php echo esc_attr( $container ); ?> well">
-            <div class="row">
-                <div class="d-flex flex-column col-md mb-4 mb-md-0">
-                    <h2>Weekly Worship Schedule</h2>
-                    <h6>Sundays</h6>
-                    Traditional Worship: 9:00 AM<br />
-                    Contemporary Worship: 10:30 AM
-                    <div class="mt-auto">
-                        <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('sermons') ); ?>">Sermons</a>
-                        <a class="btn btn-primary btn-sm mt-3" href="https://www.rightnowmedia.org/Account/Invite/CollegeParkChurch" target="_blank">RightNow Media</a>
-                        <a class="btn btn-primary btn-sm mt-3" href="<?php echo esc_url( home_url('contact-us') ); ?>">Contact Us</a>
-                    </div>
-                </div>  
-                <div class="col-md">
-                    <?php if (has_post_thumbnail( $sermons["ID"] ) ): ?>
-                        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $sermons["ID"] ), 'single-post-thumbnail' ); ?>
-                        <a href="<?php echo get_permalink($sermons["ID"]); ?>">
-                            <img src="<?php echo $image[0]; ?>" alt="<?php echo $sermons["post_title"]; ?>" />
-                        </a>
-                    <?php endif; ?>
+            <div class="highlights">
+                <?php if(get_theme_mod('highlight_main_text_1') != "") { ?>
+                <div class="highlight one">
+                    <h2><?php echo get_theme_mod('highlight_main_text_1') ?></h2>
+                    <p><?php echo get_theme_mod('highlight_secondary_text_1') ?></p>
                 </div>
-            </div>
-        </div>
-        <div class="<?php echo esc_attr( $container ); ?>">
-            <h1>Connect with <span class="script">others</span></h1>
-        </div>
-        <div class="<?php echo esc_attr( $container ); ?> well others text-center">
-            <div class="row">
-                <div class="col">
-                    <a href="<?php echo esc_url( home_url('adult-ministries') ); ?>">
-                        <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/cp-adults.png" alt="Adults" />
-                    </a>
+                <?php } ?>
+                <?php if(get_theme_mod('highlight_main_text_2')) { ?>
+                <div class="highlight two">
+                    <h2><?php echo get_theme_mod('highlight_main_text_2') ?></h2>
+                    <p><?php echo get_theme_mod('highlight_secondary_text_2') ?></p>
                 </div>
-                <div class="col">
-                    <a href="<?php echo esc_url( home_url('youth-ministries') ); ?>">
-                        <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/cp-youth.png" alt="Youth" /> 
-                    </a>
+                <?php } ?>
+                <?php if(get_theme_mod('highlight_main_text_3')) { ?>
+                <div class="highlight three">
+                    <h2><?php echo get_theme_mod('highlight_main_text_3') ?></h2>
+                    <p><?php echo get_theme_mod('highlight_secondary_text_3') ?></p>
                 </div>
-                <div class="col">
-                    <a href="<?php echo esc_url( home_url('childrens-ministries') ); ?>">
-                        <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/cp-children.png" alt="Children" />
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="<?php echo esc_attr( $container ); ?>">
-            <h1>Connect with <span class="script">ministry</span></h1>
-        </div>
-        <div class="<?php echo esc_attr( $container ); ?> well">
-            <div class="row">
-                <div class="col-md mb-4 mb-md-0">
-                    <a class="image-overlay" href="<?php echo esc_url( home_url('get-involved') ); ?>">
-                        <div class="image-text">get involved</div>
-                        <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/get-involved.png" alt="Get Involved" /> 
-                    </a>
-                </div>
-                <div class="col-md">
-                    <a class="image-overlay" href="<?php echo esc_url( home_url('care-ministries') ); ?>">
-                        <div class="image-text">request support</div>
-                        <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/request-support.png" alt="Request Support" />
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="<?php echo esc_attr( $container ); ?>">
-            <h1>Connect with <span class="script">the world</span></h1>
-        </div>
-        <div class="<?php echo esc_attr( $container ); ?> well">
-            <div class="row">
-                <div class="col-md mb-4 mb-md-0">
-                    <a class="image-overlay" href="<?php echo esc_url( home_url('missions-ministries') ); ?>">
-                        <div class="image-text">impact the world for Christ</div>
-                        <img src="<?php echo dirname( get_bloginfo('stylesheet_url')); ?>/images/missions.png" alt="Missions" />
-                    </a>
-                </div>
-                <div class="d-flex flex-column col-md">
-                    <h2>Opportunities for Impact</h2>
-                    <dl>
-                    <?php foreach( $recent_missions_posts as $recent ) { ?>
-                        <dd><a href="<?php echo get_permalink($recent["ID"]); ?>"><?php echo $recent["post_title"]; ?></a></dd>
-                    <?php } ?>
-                    </dl>
-                    <div class="mt-auto">
-                        <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('missions-ministries') ); ?>">View More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="<?php echo esc_attr( $container ); ?>">
-            <h1>Connect with <span class="script">College Park</span></h1>
-        </div>
-        <div class="<?php echo esc_attr( $container ); ?> well">
-            <div class="row">
-                <div class="col-md mb-4 mb-md-0">
-                    <h2>Latest News</h2>
-                    <dl>
-                    <?php foreach( $recent_posts as $recent ) { ?>
-                        <dd><a href="<?php echo get_permalink($recent["ID"]); ?>"><?php echo $recent["post_title"]; ?></a></dd>
-                    <?php } ?>
-                    </dl>
-                    <div class="mt-auto">
-                        <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('category/news') ); ?>">View All News</a>
-                    </div>
-                </div>
-                <div class="d-flex flex-column col-md">
-                    <?php if ( is_active_sidebar( 'home-upcoming-events' ) ) : ?>
-                        <?php dynamic_sidebar( 'home-upcoming-events' ); ?>
-                    <?php endif; ?>
-                    <div class="mt-auto">
-                        <a class="btn btn-primary btn-sm" href="<?php echo esc_url( home_url('calendar/upcoming-events/') ); ?>">View All Events</a>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </main>

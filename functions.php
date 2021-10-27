@@ -3,6 +3,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+require_once( __DIR__.'/theme-customizer.php');
+
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 function understrap_remove_scripts() {
     wp_dequeue_style( 'understrap-styles' );
@@ -111,18 +113,5 @@ function remove_sidebars() {
     unregister_sidebar('statichero');
     unregister_sidebar('footerfull');
     unregister_sidebar('left-sidebar');
-}
-
-add_action( 'widgets_init', 'home_widget_init' );
-function home_widget_init() {
-    register_sidebar( array(
-        'name'          => __('Home Upcoming Events', 'understrap' ),
-		'id'            => 'home-upcoming-events',
-		'description'   => __( 'Home Upcoming Events widget area', 'understrap' ),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h2>',
-        'after_title'   => '</h2>',
-    ) );
 }
 ?>
