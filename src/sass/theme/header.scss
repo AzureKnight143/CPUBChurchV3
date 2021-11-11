@@ -1,27 +1,3 @@
-body:not(.home) {
-  background-image: none !important;
-}
-
-body.home {
-  &.custom-background {
-    background-position: top center;
-    background-size: auto 450px;
-    background-attachment: inherit;
-    background-repeat: no-repeat;
-  }
-
-  .wrapper-navbar {
-    margin-bottom: 325px;
-  }
-
-  @include media-breakpoint-down(md) {
-    background-image: none !important;
-    .wrapper-navbar {
-      margin-bottom: 0;
-    }
-  }
-}
-
 .wrapper-navbar {
   height: 125px;
 
@@ -33,11 +9,7 @@ body.home {
 .navbar {
   text-transform: uppercase;
   background: $black;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.9),
-    rgba(0, 0, 0, 0.4)
-  );
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4));
 
   .navbar-brand {
     font-size: 2rem;
