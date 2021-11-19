@@ -35,6 +35,10 @@ body {
           justify-content: space-evenly;
           text-transform: uppercase;
 
+          .active > .nav-link:hover {
+            color: $navbar-dark-hover-color;
+          }
+
           .menu-item {
             width: 136px;
             text-align: center;

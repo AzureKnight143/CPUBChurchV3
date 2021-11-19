@@ -1,8 +1,13 @@
 #home-wrapper {
   .highlights {
     display: flex;
-    gap: 60px;
-    margin: 0 45px;
+    gap: 20px;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      gap: 60px;
+      flex-direction: row;
+    }
 
     .highlight {
       flex-grow: 1;
