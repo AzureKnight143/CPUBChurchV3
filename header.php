@@ -32,7 +32,7 @@
 							'menu_class'      => 'navbar-nav',
 							'menu_id'         => 'main-menu',
 							'walker'          => new understrap_WP_Bootstrap_Navwalker(),
-							"depth" 		  => 2
+							"depth" 		  => 1
 						)); ?>
 					</div>
 					<?php if ('container' == $container) : ?>

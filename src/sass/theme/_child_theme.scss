@@ -40,6 +40,17 @@ dl {
   outline: none;
 }
 
+.container-fluid,
+.navbar {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include media-breakpoint-up(lg) {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+
 @import "header";
 @import "footer";
 @import "front-page";

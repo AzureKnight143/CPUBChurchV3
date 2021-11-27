@@ -32,7 +32,6 @@ body {
         .navbar-nav {
           display: flex;
           align-items: center;
-          justify-content: space-evenly;
           text-transform: uppercase;
 
           .active > .nav-link:hover {
@@ -40,11 +39,11 @@ body {
           }
 
           .menu-item {
-            width: 136px;
+            flex: 1;
             text-align: center;
 
             &.logo {
-              width: 103px;
+              max-width: 103px;
               margin: 0 20px;
               text-align: center;
               display: none;

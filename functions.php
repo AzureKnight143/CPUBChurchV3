@@ -45,6 +45,12 @@ function remove_page_templates($templates)
     return $templates;
 }
 
+add_action('init', 'register_my_menu');
+function register_my_menu()
+{
+    register_nav_menu('footer', __('Footer Menu'));
+}
+
 add_filter('get_the_archive_title', 'get_the_archive_title_simple');
 function get_the_archive_title_simple($title)
 {
