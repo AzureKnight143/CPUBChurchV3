@@ -1,4 +1,48 @@
 #home-wrapper {
+  .banner {
+    text-align: center;
+    color: $white;
+    margin-bottom: 120px;
+
+    h1 {
+      color: $white;
+      font-size: 3.5rem;
+    }
+
+    h2 {
+      color: $gray-light;
+      font-size: 1.25rem;
+      margin-bottom: 50px;
+    }
+
+    p {
+      margin-bottom: 50px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      @include media-breakpoint-up(sm) {
+        gap: 50px;
+      }
+
+      a {
+        display: inline-block;
+        color: $white;
+        font-weight: 600;
+        border: 1px solid $white;
+        padding: 15px 30px;
+
+        &:hover {
+          background: $white;
+          color: $blue;
+        }
+      }
+    }
+  }
+
   .highlights {
     display: flex;
     gap: 20px;
@@ -12,7 +56,7 @@
     .highlight {
       flex-grow: 1;
       border: 10px solid $white;
-      padding: 22px;
+      padding: 42px 22px;
       text-align: center;
       background-color: $white;
       position: relative;
