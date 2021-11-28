@@ -49,6 +49,11 @@ dl {
     padding-left: 7%;
     padding-right: 7%;
   }
+
+  @include media-breakpoint-up(xl) {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
 }
 
 @import "header";

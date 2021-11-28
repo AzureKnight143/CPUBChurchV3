@@ -10,7 +10,7 @@ body {
   }
 
   #page {
-    background-image: linear-gradient($blue, transparent);
+    background-image: linear-gradient(rgba($blue, 0.3), $blue, $blue);
 
     .navbar {
       padding-top: 20px;
