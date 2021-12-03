@@ -1,4 +1,17 @@
 <?php
+$featured_post = wp_get_recent_posts(array(
+    'numberposts' => '1',
+    'post_status' => 'publish',
+    'category_name' => "featured"
+))[0];
+
+$recent_posts = wp_get_recent_posts(array(
+    'numberposts' => '3',
+    'post_status' => 'publish',
+    'category_name' => 'news',
+    'post__not_in' => array($featured_post['ID'])
+));
+
 $container = get_theme_mod('understrap_container_type');
 get_header();
 ?>
@@ -52,6 +65,28 @@ get_header();
                 <?php } ?>
             </div>
         </div>
+        <div class="featured announcement" style="background-image: url('<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($featured_post["ID"]), 'single-post-thumbnail')[0] ?>')">
+            
+                <div class="<?php echo esc_attr($container); ?>">
+                    <h2><?php echo $featured_post["post_title"]; ?></h2>
+                    <?php if (get_field('subtitle')) { ?>
+                        <h3><?php the_field('subtitle'); ?></h3>
+                    <?php } ?>
+                    <a class="more" href="<?php echo get_permalink($featured_post["ID"]); ?>">Learn More</a>
+                </div>
+            
+        </div>
+        <?php foreach ($recent_posts as $post) { ?>
+            <div class="announcement" style="background-image: url('<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($post["ID"]), 'single-post-thumbnail')[0] ?>')">
+                <div class="<?php echo esc_attr($container); ?>">
+                    <h2><?php echo $post["post_title"]; ?></h2>
+                    <?php if (get_field('subtitle')) { ?>
+                        <h3><?php the_field('subtitle'); ?></h3>
+                    <?php } ?>
+                    <a class="more" href="<?php echo get_permalink($post["ID"]); ?>">Learn More</a>
+                </div>
+            </div>
+        <?php } ?>
     </main>
 </div>
 
