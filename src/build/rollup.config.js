@@ -32,7 +32,9 @@ module.exports = {
   context: "this",
   input: [
     path.resolve(__dirname, "../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"),
-    path.resolve(__dirname, "../../../understrap/src/js/skip-link-focus-fix.js"),
+    path.resolve(__dirname, "../../node_modules/understrap/src/js/skip-link-focus-fix.js"),
+    path.resolve(__dirname, "../../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"),
+    path.resolve(__dirname, "../../node_modules/@fortawesome/fontawesome-free/js/brands.js"),
   ],
   output: {
     file: path.resolve(__dirname, `../../js/${fileDest}`),
