@@ -1,7 +1,5 @@
 <?php
-if (!defined('ABSPATH')) {
-    exit; // Exit if accessed directly.
-}
+defined('ABSPATH') || exit;
 
 require_once(__DIR__ . '/theme-customizer.php');
 
@@ -19,9 +17,14 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 function theme_enqueue_styles()
 {
     $the_theme = wp_get_theme();
-    wp_enqueue_style('child-understrap-styles', get_stylesheet_directory_uri() . '/css/child-theme.min.css', array(), $the_theme->get('Version'));
+    $suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+    // Grab asset urls.
+    $theme_styles  = "/css/child-theme{$suffix}.css";
+    $theme_scripts = "/js/child-theme{$suffix}.js";
+
+    wp_enqueue_style('child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $the_theme->get('Version'));
     wp_enqueue_script('jquery');
-    wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . '/js/child-theme.min.js', array(), $the_theme->get('Version'), true);
+    wp_enqueue_script('child-understrap-scripts', get_stylesheet_directory_uri() . $theme_scripts, array(), $the_theme->get('Version'), true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
@@ -31,6 +34,12 @@ add_action('after_setup_theme', 'add_child_theme_textdomain');
 function add_child_theme_textdomain()
 {
     load_child_theme_textdomain('understrap-child', get_stylesheet_directory() . '/languages');
+}
+
+add_filter('theme_mod_understrap_bootstrap_version', 'understrap_default_bootstrap_version', 20);
+function understrap_default_bootstrap_version($current_mod)
+{
+    return 'bootstrap5';
 }
 
 add_filter('theme_page_templates', 'remove_page_templates');

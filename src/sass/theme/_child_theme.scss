@@ -1,5 +1,5 @@
-button:focus {
-  outline-color: $blue;
+a {
+  text-decoration: none;
 }
 
 .btn {
@@ -34,10 +34,6 @@ ul,
 ol,
 dl {
   margin-bottom: 0.6rem;
-}
-
-:focus {
-  outline: none;
 }
 
 .container-fluid,

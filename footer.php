@@ -28,10 +28,10 @@
                             <a href="tel:260-356-2642">(260) 356-2642</a>
                         </p>
                         <p class="social">
-                            <a href="https://www.facebook.com/cpubchurch" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href="https://twitter.com/cpubchurch" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href="https://www.youtube.com/c/CollegeParkUnitedBrethrenChurch" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
-                            <a href="https://www.instagram.com/cpubchurch" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/cpubchurch" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/cpubchurch" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/c/CollegeParkUnitedBrethrenChurch" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="https://www.instagram.com/cpubchurch" target="_blank"><i class="fab fa-instagram"></i></a>
                         </p>
                         &copy;<?php echo date("Y"); ?> College Park Church - All Rights Reserved
                     </div>

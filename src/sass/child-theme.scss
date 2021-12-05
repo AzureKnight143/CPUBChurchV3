@@ -1,8 +1,27 @@
+@import "../../node_modules/bootstrap/scss/_functions";
 @import "theme/_child_theme_variables";
-@import "../../node_modules/bootstrap/scss/bootstrap";
-@import "../../../understrap/src/sass/theme/understrap";
-@import "../../../understrap/src/sass/theme/colors";
-@import "../../../understrap/src/sass/theme/blocks";
-@import "../../../understrap/src/sass/theme/contact-form7";
-@import "../../node_modules/font-awesome/scss/font-awesome";
+
+@import "../../node_modules/bootstrap/scss/_variables";
+@import "../../node_modules/bootstrap/scss/_mixins";
+@import "../../node_modules/bootstrap/scss/_root";
+@import "../../node_modules/bootstrap/scss/_utilities";
+@import "../../node_modules/bootstrap/scss/_reboot";
+@import "../../node_modules/bootstrap/scss/_type";
+@import "../../node_modules/bootstrap/scss/_images";
+@import "../../node_modules/bootstrap/scss/_containers";
+@import "../../node_modules/bootstrap/scss/_grid";
+@import "../../node_modules/bootstrap/scss/_tables";
+@import "../../node_modules/bootstrap/scss/_forms";
+@import "../../node_modules/bootstrap/scss/_buttons";
+@import "../../node_modules/bootstrap/scss/_transitions";
+@import "../../node_modules/bootstrap/scss/_nav";
+@import "../../node_modules/bootstrap/scss/_navbar";
+
+@import "../../node_modules/bootstrap/scss/_helpers";
+@import "../../node_modules/bootstrap/scss/utilities/_api";
+
+@import "../../node_modules/understrap/src/sass/theme/_understrap";
+@import "../../node_modules/understrap/src/sass/theme/_colors";
+@import "../../node_modules/understrap/src/sass/theme/_blocks";
+@import "../../node_modules/understrap/src/sass/theme/_contact-form7";
 @import "theme/_child_theme";
