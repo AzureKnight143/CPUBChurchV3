@@ -15,7 +15,7 @@
   }
 
   .title {
-    display: flex;
+    display: inline-flex;
     margin-bottom: 16px;
 
     img {
@@ -38,7 +38,7 @@
 
     .social {
       a {
-        padding-right: 20px;
+        margin-right: 20px;
       }
     }
   }

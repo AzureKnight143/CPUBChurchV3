@@ -23,7 +23,7 @@
 					<a rel="home" href="<?php echo esc_url(home_url('/')); ?>" itemprop="url">
 						<img class="logo-mobile d-lg-none" src="<?php echo dirname(get_bloginfo('stylesheet_url')); ?>/images/logo.png" alt="College Park Church" />
 					</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-dropdown" aria-controls="navbar-dropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-dropdown" aria-controls="navbar-dropdown" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div id="navbar-dropdown" class="collapse navbar-collapse">
