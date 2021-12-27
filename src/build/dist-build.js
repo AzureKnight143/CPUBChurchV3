@@ -25,6 +25,7 @@ async function copyDir(src, dest) {
     ".vscode",
     "mogive.html",
     "yarn.lock",
+    ".git",
   ];
 
   for (let entry of entries) {
