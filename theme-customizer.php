@@ -43,121 +43,76 @@ function customize_register(WP_Customize_Manager $wp_customize)
         'type' => 'textarea'
     ));
 
-    $wp_customize->add_setting('banner_link_text_1');
-    $wp_customize->add_control('banner_link_text_1', array(
-        'label' => __('Link 1 Text'),
-        'section' => 'homepage_banner'
-    ));
+    for ($banner_link_number = 1; $banner_link_number <= 2; $banner_link_number++) {
+        $wp_customize->add_setting('banner_link_text_' . $banner_link_number);
+        $wp_customize->add_control('banner_link_text_' . $banner_link_number, array(
+            'label' => __('Link ' . $banner_link_number . ' Text'),
+            'section' => 'homepage_banner'
+        ));
 
-    $wp_customize->add_setting('banner_link_1', array(
-        'default' => '',
-    ));
-    $wp_customize->add_control('banner_link_1', array(
-        'label' => __('Link 1 Page'),
-        'section' => 'homepage_banner',
-        'type' => 'dropdown-pages'
-    ));
-
-    $wp_customize->add_setting('banner_link_text_2');
-    $wp_customize->add_control('banner_link_text_2', array(
-        'label' => __('Link 2 Text'),
-        'section' => 'homepage_banner'
-    ));
-
-    $wp_customize->add_setting('banner_link_2', array(
-        'default' => '',
-    ));
-    $wp_customize->add_control('banner_link_2', array(
-        'label' => __('Link 2 Page'),
-        'section' => 'homepage_banner',
-        'type' => 'dropdown-pages'
-    ));
+        $wp_customize->add_setting('banner_link_' . $banner_link_number);
+        $wp_customize->add_control('banner_link_' . $banner_link_number, array(
+            'label' => __('Link ' . $banner_link_number . ' Page'),
+            'section' => 'homepage_banner',
+            'type' => 'dropdown-pages'
+        ));
+    }
 
     // Homepage Highlight Section
-    $wp_customize->add_section('homepage_highlight', array(
-        'title' => __('Highlight'),
+    $wp_customize->add_section('homepage_highlights', array(
+        'title' => __('Highlights'),
         'panel' => 'homepage',
         'priority' => 2,
     ));
 
-    // Homepage Highlight 1
-    $wp_customize->add_setting('highlight_title_1');
-    $wp_customize->add_control('highlight_title_1', array(
-        'label' => __('Card 1 Title'),
-        'section' => 'homepage_highlight'
+    for ($highlight_link_number = 1; $highlight_link_number <= 3; $highlight_link_number++) {
+        $wp_customize->add_setting('highlight_title_' . $highlight_link_number);
+        $wp_customize->add_control('highlight_title_' . $highlight_link_number, array(
+            'label' => __('Card ' . $highlight_link_number . ' Title'),
+            'section' => 'homepage_highlights'
+        ));
+
+        $wp_customize->add_setting('highlight_subtitle_' . $highlight_link_number);
+        $wp_customize->add_control('highlight_subtitle_' . $highlight_link_number, array(
+            'label' => __('Card ' . $highlight_link_number . ' Subtitle'),
+            'section' => 'homepage_highlights'
+        ));
+
+        $wp_customize->add_setting('highlight_link_' . $highlight_link_number);
+        $wp_customize->add_control('highlight_link_' . $highlight_link_number, array(
+            'label' => __('Card ' . $highlight_link_number . ' Page Link'),
+            'section' => 'homepage_highlights',
+            'type' => 'dropdown-pages'
+        ));
+    }
+
+    // Homepage Small Highlights Section
+    $wp_customize->add_section('homepage_small_highlights', array(
+        'title' => __('Small Highlights'),
+        'panel' => 'homepage',
+        'priority' => 3,
     ));
 
-    $wp_customize->add_setting('highlight_subtitle_1');
-    $wp_customize->add_control('highlight_subtitle_1', array(
-        'label' => __('Card 1 Subtitle'),
-        'section' => 'homepage_highlight'
-    ));
+    for ($small_highlight_link_number = 1; $small_highlight_link_number <= 4; $small_highlight_link_number++) {
+        $wp_customize->add_setting('small_highlight_title_' . $small_highlight_link_number);
+        $wp_customize->add_control('small_highlight_title_' . $small_highlight_link_number, array(
+            'label' => __('Card ' . $small_highlight_link_number . ' Title'),
+            'section' => 'homepage_small_highlights'
+        ));
 
-    $wp_customize->add_setting('highlight_link_1', array(
-        'default' => '',
-    ));
-    $wp_customize->add_control('highlight_link_1', array(
-        'label' => __('Card 1 Page Link'),
-        'section' => 'homepage_highlight',
-        'type' => 'dropdown-pages'
-    ));
+        $wp_customize->add_setting('small_highlight_content_' . $small_highlight_link_number);
+        $wp_customize->add_control('small_highlight_content_' . $small_highlight_link_number, array(
+            'label' => __('Card ' . $small_highlight_link_number . ' Content'),
+            'section' => 'homepage_small_highlights',
+            'type' => 'textarea'
+        ));
 
-    // Homepage Highlight 2
-    $wp_customize->add_setting('highlight_title_2');
-    $wp_customize->add_control('highlight_title_2', array(
-        'label' => __('Card 2 Title'),
-        'section' => 'homepage_highlight'
-    ));
-
-    $wp_customize->add_setting('highlight_subtitle_2');
-    $wp_customize->add_control('highlight_subtitle_2', array(
-        'label' => __('Card 2 Subtitle'),
-        'section' => 'homepage_highlight'
-    ));
-
-    $wp_customize->add_setting('highlight_link_2', array(
-        'default' => '',
-    ));
-    $wp_customize->add_control('highlight_link_2', array(
-        'label' => __('Card 2 Page Link'),
-        'section' => 'homepage_highlight',
-        'type' => 'dropdown-pages'
-    ));
-
-    // Homepage Highlight 3
-    $wp_customize->add_setting('highlight_title_3');
-    $wp_customize->add_control('highlight_title_3', array(
-        'label' => __('Card 3 Title'),
-        'section' => 'homepage_highlight'
-    ));
-
-    $wp_customize->add_setting('highlight_subtitle_3');
-    $wp_customize->add_control('highlight_subtitle_3', array(
-        'label' => __('Card 3 Subtitle'),
-        'section' => 'homepage_highlight'
-    ));
-
-    $wp_customize->add_setting('highlight_link_3', array(
-        'default' => '',
-    ));
-    $wp_customize->add_control('highlight_link_3', array(
-        'label' => __('Card 3 Page Link'),
-        'section' => 'homepage_highlight',
-        'type' => 'dropdown-pages'
-    ));
+        $wp_customize->add_setting('small_highlight_image_' . $small_highlight_link_number);
+        $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'small_highlight_image_' . $small_highlight_link_number, array(
+            'label' => __('Card ' . $small_highlight_link_number . ' Image'),
+            'section' => 'homepage_small_highlights',
+            'width' => 545,
+            'height' => 272
+        )));
+    }
 }
-
-add_action('wp_head', 'customizer_css');
-function customizer_css()
-{ ?>
-    <style type="text/css">
-    </style>
-<?php }
-
-function set_background_image($theme_mod, $css_class)
-{
-    if (get_theme_mod($theme_mod)) $image = get_theme_mod($theme_mod);
-    else $image = 'none';
-    return $css_class . ' { background-image: url(' . $image . '); }';
-}
-?>
