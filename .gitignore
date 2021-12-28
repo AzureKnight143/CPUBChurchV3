@@ -1,6 +1,4 @@
 node_modules
 .vscode/settings.json
-
-css
-js
-fonts/*wesome*
+/css
+/js

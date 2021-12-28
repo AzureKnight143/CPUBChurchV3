@@ -1,7 +1,7 @@
 const del = require("del");
 
 // directory path
-const dir = "./dist";
+const dir = "./cpubchurchv3";
 
 // delete directory recursively
 (async () => {

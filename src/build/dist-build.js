@@ -6,7 +6,7 @@ async function copyDir(src, dest) {
   let entries = await fs.readdir(src, { withFileTypes: true });
   let ignore = [
     "node_modules",
-    "dist",
+    "cpubchurchv3",
     "src",
     ".github",
     ".browserslistrc",
@@ -39,4 +39,4 @@ async function copyDir(src, dest) {
   }
 }
 
-copyDir("./", "./dist");
+copyDir("./", "./cpubchurchv3");
