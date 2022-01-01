@@ -29,6 +29,23 @@
     }
   }
 
+  @mixin small-cards() {
+    display: flex;
+    flex-direction: column;
+    max-width: 545px;
+    gap: 20px;
+    margin: 20px auto;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+      max-width: inherit;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin: 0 5%;
+    }
+  }
+
   .banner {
     text-align: center;
     color: $white;
@@ -112,21 +129,11 @@
     position: relative;
 
     .position-wrapper {
-      display: flex;
-      flex-direction: column;
-      max-width: 545px;
-      gap: 20px;
-      margin: 20px auto;
+      @include small-cards();
 
       @include media-breakpoint-up(md) {
-        flex-direction: row;
         position: absolute;
         top: -100px;
-        max-width: inherit;
-      }
-
-      @include media-breakpoint-up(lg) {
-        margin: 0 5%;
       }
 
       .small-highlight {
@@ -179,6 +186,49 @@
 
     a.more {
       @include button();
+    }
+  }
+
+  .social {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      @include small-cards();
+      height: 180px;
+    }
+
+    a {
+      width: 25%;
+      color: $white;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &.facebook {
+        background-image: linear-gradient(225deg, #314f8b, #446bb7);
+      }
+
+      &.twitter {
+        background-image: linear-gradient(225deg, #0f9afb, #1d9bf0);
+      }
+
+      &.youtube {
+        background-image: linear-gradient(225deg, #dd212d, #f22a35);
+      }
+
+      &.instagram {
+        background-image: linear-gradient(225deg, #be007e, #faae2d);
+      }
+
+      svg {
+        font-size: 2.5rem;
+      }
+
+      .text {
+        text-align: right;
+      }
     }
   }
 }

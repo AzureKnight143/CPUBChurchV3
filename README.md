@@ -1,6 +1,6 @@
 # CPUBChurchV3
 
-The third version of cpubchurch.com written in 2021.
+The third version of cpubchurch.com written in 2022.
 
 This is a child theme for [understrap 1.1.0](https://github.com/understrap/understrap). It uses [understrap-child 1.1.0](https://github.com/understrap/understrap-child) as a base.
 

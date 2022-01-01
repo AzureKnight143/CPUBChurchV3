@@ -89,6 +89,26 @@ get_header();
                 </div>
             </div>
         <?php } ?>
+        <div class="<?php echo esc_attr($container); ?>">
+            <div class="social">
+                <a class="facebook" href="https://www.facebook.com/cpubchurch" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                    <div class="text">LIKE US ON FACEBOOK</div>
+                </a>
+                <a class="twitter" href="https://twitter.com/cpubchurch" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    <div class="text">FOLLOW US ON TWITTER</div>
+                </a>
+                <a class="youtube" href="https://www.youtube.com/c/CollegeParkUnitedBrethrenChurch" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <div class="text">VIEW MORE CP CHURCH VIDEOS</div>
+                </a>
+                <a class="instagram" href="https://www.instagram.com/cpubchurch" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <div class="text">FOLLOW US ON INSTAGRAM</div>
+                </a>
+            </div>
+        </div>
     </main>
 </div>
 
