@@ -20,12 +20,12 @@
                     <div class="info">
                         <p>
                             <strong>Every Sunday</strong><br />
-                            9 am & 10:30 am
+                            <?php echo theme_variable_service_times; ?>
                         </p>
                         <p>
-                            <a href="https://goo.gl/maps/xZGMzXRckbo" target="_blank">1945 COLLEGE AVE. HUNTINGTON, IN 46750</a><br />
-                            <a href="mailto:office@cpubchurch.com">office@cpubchurch.com</a><br />
-                            <a href="tel:260-356-2642">(260) 356-2642</a>
+                            <a href="https://goo.gl/maps/xZGMzXRckbo" target="_blank"><?php echo theme_variable_address; ?></a><br />
+                            <a href="mailto:office@cpubchurch.com"><?php echo theme_variable_email; ?></a><br />
+                            <a href="tel:260-356-2642"><?php echo theme_variable_phone; ?></a>
                         </p>
                         <p class="social">
                             <a href="https://www.facebook.com/cpubchurch" target="_blank"><i class="fab fa-facebook-f"></i></a>

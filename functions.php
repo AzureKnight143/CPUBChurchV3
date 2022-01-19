@@ -1,6 +1,11 @@
 <?php
 defined('ABSPATH') || exit;
 
+define("theme_variable_address", "1945 COLLEGE AVE. HUNTINGTON, IN 46750");
+define("theme_variable_phone", "(260) 356-2642");
+define("theme_variable_email", "office@cpubchurch.com");
+define("theme_variable_service_times", "9 AM & 10:30 AM");
+
 require_once(__DIR__ . '/theme-customizer.php');
 
 add_action('wp_enqueue_scripts', 'understrap_remove_scripts', 20);

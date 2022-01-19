@@ -89,6 +89,17 @@ get_header();
                 </div>
             </div>
         <?php } ?>
+        <div class="<?php echo esc_attr($container); ?> contact">
+            <div class="contact-info">
+                <h2>How to Find Us</h2>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i><a href="https://goo.gl/maps/xZGMzXRckbo" target="_blank"><?php echo theme_variable_address; ?></a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:260-356-2642"><?php echo theme_variable_phone; ?></a></li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:office@cpubchurch.com"><?php echo theme_variable_email; ?></a></li>
+                    <li><i class="fas fa-clock"></i>Sundays, <?php echo theme_variable_service_times; ?></li>
+                </ul>
+            </div>
+        </div>
         <div class="<?php echo esc_attr($container); ?> connect">
             <?php echo do_shortcode(get_theme_mod('newsletter_shortcode')); ?>
             <div class="social">
