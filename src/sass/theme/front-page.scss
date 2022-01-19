@@ -140,11 +140,17 @@
         position: relative;
         display: inline-block;
         background-color: $white;
+        box-shadow: $shadow;
+        border-radius: 10px;
 
         @include media-breakpoint-up(md) {
           &:nth-child(even) {
             top: -60px;
           }
+        }
+
+        img {
+          border-radius: 10px 10px 0 0;
         }
 
         .content {
@@ -186,6 +192,51 @@
 
     a.more {
       @include button();
+    }
+  }
+
+  .contact {
+    background-image: url("../images/cpub_map.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-top: 100px;
+    min-height: 700px;
+
+    .contact-info {
+      border: 1px solid $gray-light;
+      padding: 25px;
+      background-color: $white;
+      width: 100%;
+      box-shadow: $shadow;
+
+      @include media-breakpoint-up(sm) {
+        width: 400px;
+      }
+
+      h2 {
+        color: $black;
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+
+        li {
+          padding: 15px 0;
+          color: $gray-dark;
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+
+          svg {
+            color: $orange;
+            margin-right: 10px;
+            width: 20px;
+            font-size: 20px;
+          }
+        }
+      }
     }
   }
 

@@ -35,6 +35,7 @@ module.exports = {
     path.resolve(__dirname, "../../node_modules/understrap/src/js/skip-link-focus-fix.js"),
     path.resolve(__dirname, "../../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"),
     path.resolve(__dirname, "../../node_modules/@fortawesome/fontawesome-free/js/brands.js"),
+    path.resolve(__dirname, "../../node_modules/@fortawesome/fontawesome-free/js/solid.js"),
   ],
   output: {
     file: path.resolve(__dirname, `../../js/${fileDest}`),
