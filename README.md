@@ -8,5 +8,4 @@ It uses the following plugins:
 
 - [Simple Calendar](https://wordpress.org/plugins/google-calendar-events/)
 - [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
-- [Really Simple CAPTCHA](https://wordpress.org/plugins/really-simple-captcha/)
 - [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/)

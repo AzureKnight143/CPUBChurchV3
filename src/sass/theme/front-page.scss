@@ -189,45 +189,139 @@
     }
   }
 
-  .social {
-    display: none;
+  .connect {
+    background-image: url("../images/social_people.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-top: 100px;
+    min-height: 750px;
 
     @include media-breakpoint-up(md) {
-      @include small-cards();
-      height: 180px;
+      padding-top: 200px;
+      padding-bottom: 100px;
     }
 
-    a {
-      width: 25%;
-      color: $white;
-      padding: 20px;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .wpcf7 {
+      $input-hight: 38px;
 
-      &.facebook {
-        background-image: linear-gradient(225deg, #314f8b, #446bb7);
-      }
+      max-width: initial;
+      padding-bottom: 150px;
 
-      &.twitter {
-        background-image: linear-gradient(225deg, #0f9afb, #1d9bf0);
-      }
-
-      &.youtube {
-        background-image: linear-gradient(225deg, #dd212d, #f22a35);
-      }
-
-      &.instagram {
-        background-image: linear-gradient(225deg, #be007e, #faae2d);
-      }
-
-      svg {
+      h2 {
         font-size: 2.5rem;
+        text-align: center;
+        text-transform: none;
       }
 
-      .text {
-        text-align: right;
+      .newsletter-form {
+        width: 100%;
+        margin: 100px auto 0 auto;
+
+        @include media-breakpoint-up(sm) {
+          width: 500px;
+        }
+
+        .input-group {
+          .wpcf7-form-control-wrap {
+            width: 100%;
+            flex-basis: 65%;
+
+            @include media-breakpoint-up(sm) {
+              flex-basis: 75%;
+            }
+
+            input {
+              border-top-right-radius: 0;
+              border-bottom-right-radius: 0;
+
+              &::placeholder {
+                text-transform: none;
+              }
+            }
+          }
+
+          .wpcf7-submit {
+            flex-basis: 35%;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            max-height: $input-hight;
+            text-transform: none;
+
+            @include media-breakpoint-up(sm) {
+              flex-basis: 25%;
+            }
+          }
+
+          .wpcf7-spinner {
+            margin: 10px auto 0 auto;
+            height: $input-hight;
+            min-width: $input-hight;
+            border-radius: 100%;
+
+            &::before {
+              transform-origin: 14px 14px;
+            }
+          }
+        }
+
+        .newsletter-options {
+          display: flex;
+          justify-content: flex-start;
+          gap: 10px;
+          margin: 10px 0;
+
+          label {
+            width: initial;
+          }
+        }
+      }
+
+      .wpcf7-response-output {
+        margin: 0;
+        background-color: $white;
+      }
+    }
+
+    .social {
+      display: none;
+
+      @include media-breakpoint-up(md) {
+        @include small-cards();
+        height: 180px;
+      }
+
+      a {
+        width: 25%;
+        color: $white;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &.facebook {
+          background-image: linear-gradient(225deg, #314f8b, #446bb7);
+        }
+
+        &.twitter {
+          background-image: linear-gradient(225deg, #0f9afb, #1d9bf0);
+        }
+
+        &.youtube {
+          background-image: linear-gradient(225deg, #dd212d, #f22a35);
+        }
+
+        &.instagram {
+          background-image: linear-gradient(225deg, #be007e, #faae2d);
+        }
+
+        svg {
+          font-size: 2.5rem;
+        }
+
+        .text {
+          text-align: right;
+        }
       }
     }
   }

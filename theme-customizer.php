@@ -115,4 +115,17 @@ function customize_register(WP_Customize_Manager $wp_customize)
             'height' => 272
         )));
     }
+
+    // Newsletter
+    $wp_customize->add_section('homepage_newsletter', array(
+        'title' => __('Newsletter Signup'),
+        'panel' => 'homepage',
+        'priority' => 4,
+    ));
+
+    $wp_customize->add_setting('newsletter_shortcode');
+    $wp_customize->add_control('newsletter_shortcode', array(
+        'label' => __('Contact Form 7 Shortcode'),
+        'section' => 'homepage_newsletter'
+    ));
 }

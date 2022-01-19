@@ -89,7 +89,8 @@ get_header();
                 </div>
             </div>
         <?php } ?>
-        <div class="<?php echo esc_attr($container); ?>">
+        <div class="<?php echo esc_attr($container); ?> connect">
+            <?php echo do_shortcode(get_theme_mod('newsletter_shortcode')); ?>
             <div class="social">
                 <a class="facebook" href="https://www.facebook.com/cpubchurch" target="_blank">
                     <i class="fab fa-facebook-f"></i>
