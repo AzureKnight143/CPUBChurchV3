@@ -1,9 +1,10 @@
 <?php
-$featured_post = wp_get_recent_posts(array(
+$featured_posts = wp_get_recent_posts(array(
     'numberposts' => '1',
     'post_status' => 'publish',
     'category_name' => "featured"
-))[0];
+));
+$featured_post = array_shift($featured_posts);
 
 $recent_posts = wp_get_recent_posts(array(
     'numberposts' => '3',
@@ -50,15 +51,17 @@ get_header();
                 <?php } ?>
             </div>
         </div>
-        <div class="featured announcement" style="background-image: url('<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($featured_post["ID"]), 'single-post-thumbnail')[0] ?>')">
-            <div class="<?php echo esc_attr($container); ?>">
-                <h2><?php echo $featured_post["post_title"]; ?></h2>
-                <?php if (get_field('subtitle')) { ?>
-                    <h3><?php the_field('subtitle'); ?></h3>
-                <?php } ?>
-                <a class="more" href="<?php echo get_permalink($featured_post["ID"]); ?>">Learn More</a>
+        <?php if ($featured_post) { ?>
+            <div class="featured announcement" style="background-image: url('<?php echo get_field('home_page_image', $featured_post["ID"])['url'] ?>')">
+                <div class="<?php echo esc_attr($container); ?>">
+                    <h2><?php echo $featured_post["post_title"]; ?></h2>
+                    <?php if (get_field('subtitle', $featured_post["ID"])) { ?>
+                        <h3><?php the_field('subtitle', $featured_post["ID"]); ?></h3>
+                    <?php } ?>
+                    <a class="more" href="<?php echo get_permalink($featured_post["ID"]); ?>">Learn More</a>
+                </div>
             </div>
-        </div>
+        <?php } ?>
         <div class="<?php echo esc_attr($container); ?>">
             <div class="small-highlights">
                 <div class="position-wrapper">
@@ -79,11 +82,11 @@ get_header();
             </div>
         </div>
         <?php foreach ($recent_posts as $post) { ?>
-            <div class="announcement" style="background-image: url('<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($post["ID"]), 'single-post-thumbnail')[0] ?>')">
+            <div class="announcement" style="background-image: url('<?php echo get_field('home_page_image', $post["ID"])['url'] ?>')">
                 <div class="<?php echo esc_attr($container); ?>">
                     <h2><?php echo $post["post_title"]; ?></h2>
-                    <?php if (get_field('subtitle')) { ?>
-                        <h3><?php the_field('subtitle'); ?></h3>
+                    <?php if (get_field('subtitle', $post["ID"])) { ?>
+                        <h3><?php the_field('subtitle', $post["ID"]); ?></h3>
                     <?php } ?>
                     <a class="more" href="<?php echo get_permalink($post["ID"]); ?>">Learn More</a>
                 </div>
