@@ -60,7 +60,11 @@ body {
                 color: $white;
                 padding-top: 70px;
                 font-size: 0.8rem;
-                font-weight: 600;
+                font-weight: 100;
+
+                &::first-line {
+                  font-weight: 600;
+                }
               }
             }
           }
