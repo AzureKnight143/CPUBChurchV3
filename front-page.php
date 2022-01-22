@@ -20,11 +20,11 @@ get_header();
     <main class="site-main" id="main">
         <div class="<?php echo esc_attr($container); ?>">
             <div class="banner">
-                <?php if (get_theme_mod('banner_title')) { ?>
-                    <h1><?php echo get_theme_mod('banner_title') ?></h1>
-                <?php } ?>
                 <?php if (get_theme_mod('banner_subtitle')) { ?>
                     <h2><?php echo get_theme_mod('banner_subtitle') ?></h2>
+                <?php } ?>
+                <?php if (get_theme_mod('banner_title')) { ?>
+                    <h1><?php echo get_theme_mod('banner_title') ?></h1>
                 <?php } ?>
                 <?php if (get_theme_mod('banner_content')) { ?>
                     <p><?php echo get_theme_mod('banner_content') ?></p>

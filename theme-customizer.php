@@ -19,9 +19,12 @@ function customize_register(WP_Customize_Manager $wp_customize)
         'priority' => 1,
     ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'background_image', array(
+    $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'background_image', array(
         'label' => __('Background Image'),
-        'section' => 'homepage_banner'
+        'section' => 'homepage_banner',
+        'width' => 1920,
+        'height' => 700,
+        'flex_height' => true
     )));
 
     $wp_customize->add_setting('banner_title');
