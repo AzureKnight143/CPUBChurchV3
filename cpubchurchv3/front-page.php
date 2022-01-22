@@ -1,9 +1,10 @@
 <?php
-$featured_post = wp_get_recent_posts(array(
+$featured_posts = wp_get_recent_posts(array(
     'numberposts' => '1',
     'post_status' => 'publish',
     'category_name' => "featured"
-))[0];
+));
+$featured_post = array_shift($featured_posts);
 
 $recent_posts = wp_get_recent_posts(array(
     'numberposts' => '3',
@@ -20,11 +21,11 @@ get_header();
     <main class="site-main" id="main">
         <div class="<?php echo esc_attr($container); ?>">
             <div class="banner">
-                <?php if (get_theme_mod('banner_title')) { ?>
-                    <h1><?php echo get_theme_mod('banner_title') ?></h1>
-                <?php } ?>
                 <?php if (get_theme_mod('banner_subtitle')) { ?>
                     <h2><?php echo get_theme_mod('banner_subtitle') ?></h2>
+                <?php } ?>
+                <?php if (get_theme_mod('banner_title')) { ?>
+                    <h1><?php echo get_theme_mod('banner_title') ?></h1>
                 <?php } ?>
                 <?php if (get_theme_mod('banner_content')) { ?>
                     <p><?php echo get_theme_mod('banner_content') ?></p>
@@ -50,15 +51,17 @@ get_header();
                 <?php } ?>
             </div>
         </div>
-        <div class="featured announcement" style="background-image: url('<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($featured_post["ID"]), 'single-post-thumbnail')[0] ?>')">
-            <div class="<?php echo esc_attr($container); ?>">
-                <h2><?php echo $featured_post["post_title"]; ?></h2>
-                <?php if (get_field('subtitle')) { ?>
-                    <h3><?php the_field('subtitle'); ?></h3>
-                <?php } ?>
-                <a class="more" href="<?php echo get_permalink($featured_post["ID"]); ?>">Learn More</a>
+        <?php if ($featured_post) { ?>
+            <div class="featured announcement" style="background-image: url('<?php echo get_field('home_page_image', $featured_post["ID"])['url'] ?>')">
+                <div class="<?php echo esc_attr($container); ?>">
+                    <h2><?php echo $featured_post["post_title"]; ?></h2>
+                    <?php if (get_field('subtitle', $featured_post["ID"])) { ?>
+                        <h3><?php the_field('subtitle', $featured_post["ID"]); ?></h3>
+                    <?php } ?>
+                    <a class="more" href="<?php echo get_permalink($featured_post["ID"]); ?>">Learn More</a>
+                </div>
             </div>
-        </div>
+        <?php } ?>
         <div class="<?php echo esc_attr($container); ?>">
             <div class="small-highlights">
                 <div class="position-wrapper">
@@ -79,16 +82,48 @@ get_header();
             </div>
         </div>
         <?php foreach ($recent_posts as $post) { ?>
-            <div class="announcement" style="background-image: url('<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($post["ID"]), 'single-post-thumbnail')[0] ?>')">
+            <div class="announcement" style="background-image: url('<?php echo get_field('home_page_image', $post["ID"])['url'] ?>')">
                 <div class="<?php echo esc_attr($container); ?>">
                     <h2><?php echo $post["post_title"]; ?></h2>
-                    <?php if (get_field('subtitle')) { ?>
-                        <h3><?php the_field('subtitle'); ?></h3>
+                    <?php if (get_field('subtitle', $post["ID"])) { ?>
+                        <h3><?php the_field('subtitle', $post["ID"]); ?></h3>
                     <?php } ?>
                     <a class="more" href="<?php echo get_permalink($post["ID"]); ?>">Learn More</a>
                 </div>
             </div>
         <?php } ?>
+        <div class="<?php echo esc_attr($container); ?> contact">
+            <div class="contact-info">
+                <h2>How to Find Us</h2>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i><a href="https://goo.gl/maps/xZGMzXRckbo" target="_blank"><?php echo theme_variable_address; ?></a></li>
+                    <li><i class="fas fa-phone"></i><a href="tel:260-356-2642"><?php echo theme_variable_phone; ?></a></li>
+                    <li><i class="fas fa-envelope"></i><a href="mailto:office@cpubchurch.com"><?php echo theme_variable_email; ?></a></li>
+                    <li><i class="fas fa-clock"></i>Sundays, <?php echo theme_variable_service_times; ?></li>
+                </ul>
+            </div>
+        </div>
+        <div class="<?php echo esc_attr($container); ?> connect">
+            <?php echo do_shortcode(get_theme_mod('newsletter_shortcode')); ?>
+            <div class="social">
+                <a class="facebook" href="https://www.facebook.com/cpubchurch" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                    <div class="text">LIKE US ON FACEBOOK</div>
+                </a>
+                <a class="twitter" href="https://twitter.com/cpubchurch" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    <div class="text">FOLLOW US ON TWITTER</div>
+                </a>
+                <a class="youtube" href="https://www.youtube.com/c/CollegeParkUnitedBrethrenChurch" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <div class="text">VIEW MORE CP CHURCH VIDEOS</div>
+                </a>
+                <a class="instagram" href="https://www.instagram.com/cpubchurch" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <div class="text">FOLLOW US ON INSTAGRAM</div>
+                </a>
+            </div>
+        </div>
     </main>
 </div>
 

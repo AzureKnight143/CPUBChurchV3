@@ -12,6 +12,10 @@
     &:hover {
       color: $navbar-dark-hover-color;
     }
+
+    &:not([href]) {
+      color: $gray-light;
+    }
   }
 
   .title {
@@ -71,14 +75,6 @@
         text-transform: capitalize;
         font-size: 0.9rem;
         padding-bottom: 10px;
-
-        a {
-          color: $gray-light;
-
-          &:hover {
-            color: $white;
-          }
-        }
       }
     }
   }
