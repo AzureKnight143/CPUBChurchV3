@@ -62,6 +62,14 @@ get_header();
                 </div>
             </div>
         <?php } ?>
+        <div class="sermon" style="background-image: url('<?php echo get_theme_mod('sermon_background_image') ?>')">
+            <?php if (get_theme_mod('sermon_title')) { ?>
+                <h1><?php echo get_theme_mod('sermon_title') ?></h1>
+            <?php } ?>
+            <?php if (get_theme_mod('sermon_subtitle')) { ?>
+                <h2><?php echo get_theme_mod('sermon_subtitle') ?></h2>
+            <?php } ?>
+        </div>
         <div class="<?php echo esc_attr($container); ?>">
             <div class="small-highlights">
                 <div class="position-wrapper">
@@ -104,7 +112,9 @@ get_header();
             </div>
         </div>
         <div class="<?php echo esc_attr($container); ?> connect">
-            <?php echo do_shortcode(get_theme_mod('newsletter_shortcode')); ?>
+            <?php if (get_theme_mod('newsletter_shortcode')) {
+                echo do_shortcode(get_theme_mod('newsletter_shortcode'));
+            } ?>
             <div class="social">
                 <a class="facebook" href="https://www.facebook.com/cpubchurch" target="_blank">
                     <i class="fab fa-facebook-f"></i>

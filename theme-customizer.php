@@ -89,11 +89,38 @@ function customize_register(WP_Customize_Manager $wp_customize)
         ));
     }
 
+    // Homepage Sermon Section
+    $wp_customize->add_section('homepage_sermon', array(
+        'title' => __('Sermon'),
+        'panel' => 'homepage',
+        'priority' => 3,
+    ));
+
+    $wp_customize->add_setting('sermon_background_image');
+    $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'sermon_background_image', array(
+        'label' => __('Background Image'),
+        'section' => 'homepage_sermon',
+        'width' => 1920,
+        'height' => 700
+    )));
+
+    $wp_customize->add_setting('sermon_title');
+    $wp_customize->add_control('sermon_title', array(
+        'label' => __('Title'),
+        'section' => 'homepage_sermon'
+    ));
+
+    $wp_customize->add_setting('sermon_subtitle');
+    $wp_customize->add_control('sermon_subtitle', array(
+        'label' => __('Subtitle'),
+        'section' => 'homepage_sermon'
+    ));
+
     // Homepage Small Highlights Section
     $wp_customize->add_section('homepage_small_highlights', array(
         'title' => __('Small Highlights'),
         'panel' => 'homepage',
-        'priority' => 3,
+        'priority' => 4,
     ));
 
     for ($small_highlight_link_number = 1; $small_highlight_link_number <= 4; $small_highlight_link_number++) {
@@ -119,11 +146,11 @@ function customize_register(WP_Customize_Manager $wp_customize)
         )));
     }
 
-    // Newsletter
+    // Homepage Newsletter Section
     $wp_customize->add_section('homepage_newsletter', array(
         'title' => __('Newsletter Signup'),
         'panel' => 'homepage',
-        'priority' => 4,
+        'priority' => 5,
     ));
 
     $wp_customize->add_setting('newsletter_shortcode');
