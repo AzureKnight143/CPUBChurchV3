@@ -1,4 +1,6 @@
 #home-wrapper {
+  $section-height: 700px;
+
   @mixin largeTitle() {
     color: $white;
     font-size: 2.5rem;
@@ -144,7 +146,7 @@
         border-radius: 10px;
 
         @include media-breakpoint-up(md) {
-          max-width: 300px;
+          max-width: 250px;
 
           &:nth-child(even) {
             top: -60px;
@@ -172,7 +174,7 @@
   }
 
   .announcement {
-    height: 700px;
+    height: $section-height;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
@@ -202,7 +204,7 @@
     background-repeat: no-repeat;
     background-position: 78% top;
     padding-top: 30px;
-    min-height: 700px;
+    min-height: $section-height;
 
     @include media-breakpoint-up(lg) {
       padding-top: 100px;
@@ -256,7 +258,7 @@
     background-repeat: no-repeat;
     background-position: center top;
     padding-top: 100px;
-    min-height: 700px;
+    min-height: $section-height;
 
     @include media-breakpoint-up(md) {
       padding-top: 150px;

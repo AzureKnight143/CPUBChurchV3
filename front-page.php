@@ -10,7 +10,7 @@ $recent_posts = wp_get_recent_posts(array(
     'numberposts' => '3',
     'post_status' => 'publish',
     'category_name' => 'news',
-    'post__not_in' => array($featured_post['ID'])
+    'post__not_in' => $featured_post ? array($featured_post['ID']) : array()
 ));
 
 $container = get_theme_mod('understrap_container_type');
@@ -62,13 +62,16 @@ get_header();
                 </div>
             </div>
         <?php } ?>
-        <div class="sermon" style="background-image: url('<?php echo get_theme_mod('sermon_background_image') ?>')">
-            <?php if (get_theme_mod('sermon_title')) { ?>
-                <h1><?php echo get_theme_mod('sermon_title') ?></h1>
-            <?php } ?>
-            <?php if (get_theme_mod('sermon_subtitle')) { ?>
-                <h2><?php echo get_theme_mod('sermon_subtitle') ?></h2>
-            <?php } ?>
+        <div class="sermon announcement" style="background-image: url('<?php echo wp_get_attachment_url(get_theme_mod('sermon_background_image')) ?>')">
+            <div class="<?php echo esc_attr($container); ?>">
+                <?php if (get_theme_mod('sermon_title')) { ?>
+                    <h2><?php echo get_theme_mod('sermon_title') ?></h2>
+                <?php } ?>
+                <?php if (get_theme_mod('sermon_subtitle')) { ?>
+                    <h3><?php echo get_theme_mod('sermon_subtitle') ?></h3>
+                <?php } ?>
+                <a class="more" href="<?php echo get_permalink(get_page_by_path('sermons')) ?>">Watch Latest Sermon</a>
+            </div>
         </div>
         <div class="<?php echo esc_attr($container); ?>">
             <div class="small-highlights">
