@@ -13,6 +13,13 @@ $recent_posts = wp_get_recent_posts(array(
     'post__not_in' => $featured_post ? array($featured_post['ID']) : array()
 ));
 
+$announcementCount = 0;
+
+function getAnnouncementAlignment($announcementCount)
+{
+    echo $announcementCount % 2 ? '' : 'right';
+}
+
 $container = get_theme_mod('understrap_container_type');
 get_header();
 ?>
@@ -51,7 +58,8 @@ get_header();
                 <?php } ?>
             </div>
         </div>
-        <?php if ($featured_post) { ?>
+        <?php if ($featured_post) {
+            $announcementCount++; ?>
             <div class="featured announcement" style="background-image: url('<?php echo get_field('home_page_image', $featured_post["ID"])['url'] ?>')">
                 <div class="<?php echo esc_attr($container); ?>">
                     <h2><?php echo $featured_post["post_title"]; ?></h2>
@@ -61,8 +69,9 @@ get_header();
                     <a class="more" href="<?php echo get_permalink($featured_post["ID"]); ?>">Learn More</a>
                 </div>
             </div>
-        <?php } ?>
-        <div class="sermon announcement" style="background-image: url('<?php echo wp_get_attachment_url(get_theme_mod('sermon_background_image')) ?>')">
+        <?php }
+        $announcementCount++; ?>
+        <div class="sermon announcement <?php getAnnouncementAlignment($announcementCount) ?>" style="background-image: url('<?php echo wp_get_attachment_url(get_theme_mod('sermon_background_image')) ?>')">
             <div class="<?php echo esc_attr($container); ?>">
                 <?php if (get_theme_mod('sermon_title')) { ?>
                     <h2><?php echo get_theme_mod('sermon_title') ?></h2>
@@ -92,8 +101,9 @@ get_header();
                 </div>
             </div>
         </div>
-        <?php foreach ($recent_posts as $post) { ?>
-            <div class="announcement" style="background-image: url('<?php echo get_field('home_page_image', $post["ID"])['url'] ?>')">
+        <?php foreach ($recent_posts as $post) {
+            $announcementCount++; ?>
+            <div class="announcement <?php getAnnouncementAlignment($announcementCount) ?>" style="background-image: url('<?php echo get_field('home_page_image', $post["ID"])['url'] ?>')">
                 <div class="<?php echo esc_attr($container); ?>">
                     <h2><?php echo $post["post_title"]; ?></h2>
                     <?php if (get_field('subtitle', $post["ID"])) { ?>
