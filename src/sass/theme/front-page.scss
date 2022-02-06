@@ -286,6 +286,30 @@
           width: 500px;
         }
 
+        input::placeholder {
+          text-transform: none;
+        }
+
+        .name {
+          display: flex;
+          gap: 10px;
+        }
+
+        .newsletter-options {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          margin: 10px 0;
+
+          label {
+            width: initial;
+          }
+
+          input {
+            margin-right: 10px;
+          }
+        }
+
         .input-group {
           .wpcf7-form-control-wrap {
             width: 100%;
@@ -298,10 +322,6 @@
             input {
               border-top-right-radius: 0;
               border-bottom-right-radius: 0;
-
-              &::placeholder {
-                text-transform: none;
-              }
             }
           }
 
@@ -326,17 +346,6 @@
             &::before {
               transform-origin: 14px 14px;
             }
-          }
-        }
-
-        .newsletter-options {
-          display: flex;
-          justify-content: flex-start;
-          gap: 10px;
-          margin: 10px 0;
-
-          label {
-            width: initial;
           }
         }
       }
