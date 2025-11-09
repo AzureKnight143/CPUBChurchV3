@@ -8,7 +8,7 @@
 const { rm } = require( 'fs' );
 
 // Directory path.
-const dir = './dist';
+const dir = './cpubchurchv3';
 
 // Delete directory recursively.
 rm( dir, { recursive: true }, ( error ) => {

@@ -5,27 +5,7 @@ async function copyDir(src, dest) {
   await fs.mkdir(dest, { recursive: true });
   let entries = await fs.readdir(src, { withFileTypes: true });
   let ignore = [
-    "node_modules",
-    "cpubchurchv3",
     "src",
-    ".github",
-    ".browserslistrc",
-    ".editorconfig",
-    ".gitattributes",
-    ".gitignore",
-    ".jscsrc",
-    ".jshintignore",
-    ".travis.yml",
-    "composer.json",
-    "composer.lock",
-    "package.json",
-    "package-lock.json",
-    "phpcs.xml.dist",
-    "readme.txt",
-    ".vscode",
-    "mogive.html",
-    "yarn.lock",
-    ".git",
   ];
 
   for (let entry of entries) {
@@ -39,4 +19,4 @@ async function copyDir(src, dest) {
   }
 }
 
-copyDir("./", "./cpubchurchv3");
+copyDir("./wp-content/themes/cpubchurchv3", "./cpubchurchv3");
