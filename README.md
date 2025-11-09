@@ -2,7 +2,7 @@
 
 The third version of cpubchurch.com written in 2025.
 
-This is a child theme for [understrap 1.1.0](https://github.com/understrap/understrap). It uses [understrap-child 1.1.0](https://github.com/understrap/understrap-child) as a base.
+This is a child theme for [understrap 1.2.4](https://github.com/understrap/understrap). It uses [understrap-child 1.2.0](https://github.com/understrap/understrap-child) as a base.
 
 It uses the following plugins:
 

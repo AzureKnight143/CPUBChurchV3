@@ -1,15 +1,20 @@
-const del = require("del");
+/* eslint-disable no-console, eslint-comments/disable-enable-pair */
 
-// directory path
-const dir = "./cpubchurchv3";
+'use strict';
 
-// delete directory recursively
-(async () => {
-  try {
-    await del(dir);
+/**
+ * External dependencies
+ */
+const { rm } = require( 'fs' );
 
-    console.log(`${dir} is deleted!`);
-  } catch (err) {
-    console.error(`Error while deleting ${dir}.`);
-  }
-})();
+// Directory path.
+const dir = './dist';
+
+// Delete directory recursively.
+rm( dir, { recursive: true }, ( error ) => {
+	if ( error ) {
+		console.error( error.name + ': ' + error.message + '\n' );
+	} else {
+		console.log( dir + ' is deleted!\n' );
+	}
+} );
