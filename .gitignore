@@ -1,4 +1,6 @@
 node_modules
+/.env
+/dump.sql
 
 wp-content/*
 !wp-content/themes
