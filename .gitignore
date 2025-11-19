@@ -1,4 +1,11 @@
 node_modules
-.vscode/settings.json
-/css
-/js
+/.env
+/dump.sql
+
+wp-content/*
+!wp-content/themes
+wp-content/themes/*
+!wp-content/themes/cpubchurchv3
+
+wp-content/themes/cpubchurchv3/css
+wp-content/themes/cpubchurchv3/js

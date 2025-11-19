@@ -42,7 +42,7 @@ function add_child_theme_textdomain()
 }
 
 add_filter('theme_mod_understrap_bootstrap_version', 'understrap_default_bootstrap_version', 20);
-function understrap_default_bootstrap_version($current_mod)
+function understrap_default_bootstrap_version()
 {
     return 'bootstrap5';
 }

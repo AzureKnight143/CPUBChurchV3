@@ -16,7 +16,6 @@
   },
   "mangle": {},
   "sourceMap": {
-    "filename": "js/child-theme.js.map",
-    "url": "child-theme.min.js.map"
+    "includeSources": true
   }
 }
