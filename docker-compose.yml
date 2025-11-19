@@ -12,6 +12,7 @@ services:
       - WORDPRESS_HOME=http://localhost:8000
       - WORDPRESS_SITEURL=http://localhost:8000
       - WORDPRESS_DEBUG=true
+      - WORDPRESS_CONFIG_EXTRA=define( 'WP_DEBUG_LOG', true ); define( 'WP_DEBUG_DISPLAY', true ); @ini_set( 'display_errors', 1 );
     volumes:
       - ./wp-content:/var/www/html/wp-content
     depends_on:
