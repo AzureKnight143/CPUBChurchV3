@@ -35,7 +35,7 @@ function customize_register(WP_Customize_Manager $wp_customize)
         'label' => __('Background Image'),
         'section' => 'homepage_banner',
         'width' => 1920,
-        'height' => 700,
+        'height' => 1920,
         'flex_height' => true
     )));
 

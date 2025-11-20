@@ -25,7 +25,7 @@
 					<div class="container"><?php endif; ?>
 					<a rel="home" href="<?php echo esc_url(home_url('/')); ?>" itemprop="url">
 						<img class="logo-mobile d-lg-none"
-							src="<?php echo dirname(get_bloginfo('stylesheet_url')); ?>/images/logo.png"
+							src="<?php echo dirname(get_bloginfo('stylesheet_url')); ?>/images/logo.webp"
 							alt="College Park Church" />
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"

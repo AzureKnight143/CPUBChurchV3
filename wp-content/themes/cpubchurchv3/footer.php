@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-sm-7 col-md-5 col-lg-4">
                     <a class="title" rel="home" href="<?php echo esc_url(home_url('/')); ?>" itemprop="url">
-                        <img class="logo" src="<?php echo dirname(get_bloginfo('stylesheet_url')); ?>/images/logo.png"
+                        <img class="logo" src="<?php echo dirname(get_bloginfo('stylesheet_url')); ?>/images/logo.webp"
                             alt="College Park Church" />
                         <h2>College Park<br /><span class="light">Church</span></h2>
                     </a>
