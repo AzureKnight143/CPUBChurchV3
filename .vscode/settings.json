@@ -1,8 +1,17 @@
 {
     "cSpell.words": [
+        "bloginfo",
         "cpubchurch",
         "cpubchurchv",
         "initdb",
+        "hfeed",
+        "Navwalker",
+        "pingback",
+        "popperjs",
         "understrap"
+    ],
+    "php.stubs": [
+        "wordpress",
+        "*"
     ]
 }

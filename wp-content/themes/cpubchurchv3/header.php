@@ -14,28 +14,35 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> style="background-image: url('<?php echo wp_get_attachment_url(get_theme_mod('banner_background_image')) ?>')">
+<body <?php body_class(); ?>
+	style="background-image: url('<?php echo wp_get_attachment_url(get_theme_mod('banner_background_image')) ?>')">
 	<div class="hfeed site" id="page">
 		<div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
-			<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e('Skip to content', 'understrap'); ?></a>
+			<a class="skip-link screen-reader-text sr-only"
+				href="#content"><?php esc_html_e('Skip to content', 'understrap'); ?></a>
 			<nav class="navbar navbar-expand-lg navbar-dark">
-				<?php if ('container' == $container) : ?><div class="container"><?php endif; ?>
+				<?php if ('container' == $container): ?>
+					<div class="container"><?php endif; ?>
 					<a rel="home" href="<?php echo esc_url(home_url('/')); ?>" itemprop="url">
-						<img class="logo-mobile d-lg-none" src="<?php echo dirname(get_bloginfo('stylesheet_url')); ?>/images/logo.png" alt="College Park Church" />
+						<img class="logo-mobile d-lg-none"
+							src="<?php echo dirname(get_bloginfo('stylesheet_url')); ?>/images/logo.png"
+							alt="College Park Church" />
 					</a>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-dropdown" aria-controls="navbar-dropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbar-dropdown" aria-controls="navbar-dropdown" aria-expanded="false"
+						aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div id="navbar-dropdown" class="collapse navbar-collapse">
 						<?php wp_nav_menu(array(
-							'theme_location'  => 'primary',
-							'menu_class'      => 'navbar-nav',
-							'menu_id'         => 'main-menu',
-							'walker'          => new understrap_WP_Bootstrap_Navwalker(),
-							"depth" 		  => 1
+							'theme_location' => 'primary',
+							'menu_class' => 'navbar-nav',
+							'menu_id' => 'main-menu',
+							'walker' => new Understrap_WP_Bootstrap_Navwalker(),
+							"depth" => 1
 						)); ?>
 					</div>
-					<?php if ('container' == $container) : ?>
+					<?php if ('container' == $container): ?>
 					</div><?php endif; ?>
 			</nav>
 		</div>
