@@ -3,7 +3,7 @@ body {
     background-image: none !important;
   }
 
-  &.home.custom-background {
+  &.home {
     background-position: center top;
     background-attachment: inherit;
     background-repeat: no-repeat;
@@ -53,7 +53,7 @@ body {
               }
 
               a {
-                background-image: url("../images/logo.png");
+                background-image: url("../images/logo.webp");
                 background-repeat: no-repeat;
                 background-size: 60px;
                 background-position: center top;

@@ -4,7 +4,6 @@ defined('ABSPATH') || exit;
 define("theme_variable_address", "1945 COLLEGE AVE. HUNTINGTON, IN 46750");
 define("theme_variable_phone", "(260) 356-2642");
 define("theme_variable_email", "office@cpubchurch.com");
-define("theme_variable_service_times", "9 AM & 10:30 AM");
 
 require_once(__DIR__ . '/theme-customizer.php');
 
@@ -24,7 +23,7 @@ function theme_enqueue_styles()
     $the_theme = wp_get_theme();
     $suffix = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
     // Grab asset urls.
-    $theme_styles  = "/css/child-theme{$suffix}.css";
+    $theme_styles = "/css/child-theme{$suffix}.css";
     $theme_scripts = "/js/child-theme{$suffix}.js";
 
     wp_enqueue_style('child-understrap-styles', get_stylesheet_directory_uri() . $theme_styles, array(), $the_theme->get('Version'));
@@ -87,12 +86,12 @@ function understrap_all_excerpts_get_more_link($post_excerpt)
 function understrap_post_nav()
 {
     $previous = (is_attachment()) ? get_post(get_post()->post_parent) : get_adjacent_post(false, '', true);
-    $next     = get_adjacent_post(false, '', false);
+    $next = get_adjacent_post(false, '', false);
 
     if (!$next && !$previous) {
         return;
     }
-?>
+    ?>
 
     <nav class="container navigation post-navigation">
         <h2 class="sr-only"><?php _e('Post navigation', 'understrap'); ?></h2>
@@ -102,12 +101,12 @@ function understrap_post_nav()
                 previous_post_link('<span class="nav-previous">%link</span>', _x('<i class="fa fa-angle-left"></i>&nbsp;Previous Post', 'Previous post link', 'understrap'));
             }
             if (get_next_post_link()) {
-                next_post_link('<span class="nav-next">%link</span>',     _x('Next Post&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'understrap'));
+                next_post_link('<span class="nav-next">%link</span>', _x('Next Post&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'understrap'));
             }
             ?>
         </div>
     </nav>
-<?php
+    <?php
 }
 
 add_filter('next_post_link', 'post_link_attributes');

@@ -7,6 +7,17 @@ function customize_register(WP_Customize_Manager $wp_customize)
     $wp_customize->remove_section('static_front_page');
     $wp_customize->remove_section('custom_css');
 
+    // Site Identity Panel
+    $wp_customize->remove_control('custom_logo');
+    $wp_customize->remove_control('blogdescription');
+
+    $wp_customize->add_setting('service_times');
+    $wp_customize->add_control('service_times', array(
+        'label' => __('Service Times'),
+        'section' => 'title_tagline'
+    ));
+
+    // Homepage Panel
     $wp_customize->add_panel('homepage', array(
         'title' => __('Homepage'),
         'priority' => 120,
@@ -24,7 +35,7 @@ function customize_register(WP_Customize_Manager $wp_customize)
         'label' => __('Background Image'),
         'section' => 'homepage_banner',
         'width' => 1920,
-        'height' => 700,
+        'height' => 1920,
         'flex_height' => true
     )));
 

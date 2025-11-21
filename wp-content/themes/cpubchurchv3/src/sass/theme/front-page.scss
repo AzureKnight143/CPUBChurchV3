@@ -200,7 +200,7 @@
   }
 
   .contact {
-    background-image: url("../images/cpub_map.png");
+    background-image: url("../images/cpub_map.webp");
     background-repeat: no-repeat;
     background-position: 78% top;
     padding-top: 30px;
@@ -254,7 +254,7 @@
   }
 
   .connect {
-    background-image: url("../images/social_people.png");
+    background-image: url("../images/social_people.webp");
     background-repeat: no-repeat;
     background-position: center top;
     padding-top: 100px;
@@ -265,11 +265,12 @@
       padding-bottom: 100px;
     }
 
-    .wpcf7 {
-      $input-hight: 38px;
+    p {
+      margin: 0
+    }
 
-      max-width: initial;
-      margin: 0 5% !important;
+    .wpcf7 {
+      $input-height: 38px;
       padding-bottom: 125px;
 
       h2 {
@@ -291,56 +292,67 @@
         }
 
         .name {
-          display: flex;
-          gap: 10px;
+          p {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+
+            @include media-breakpoint-up(sm) {
+                gap: 10px;
+            }
+
+            input{
+              border-radius: 0;
+            }
+          }
         }
 
         .newsletter-options {
-          display: flex;
-          justify-content: center;
-          gap: 10px;
-          margin: 10px 0;
+          p {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
 
-          label {
-            width: initial;
-          }
-
-          input {
-            margin-right: 10px;
+            label {
+              width: initial;
+            }
+            
+            input {
+              margin-right: 10px;
+            }
           }
         }
 
         .input-group {
-          .wpcf7-form-control-wrap {
+          p {
+            display: flex;
             width: 100%;
-            flex-basis: 65%;
+            margin: 0;
 
-            @include media-breakpoint-up(sm) {
-              flex-basis: 75%;
+            .wpcf7-form-control-wrap {
+              width: 100%;
+              
+              input {
+                border-radius: 0;
+              }
             }
-
-            input {
-              border-top-right-radius: 0;
-              border-bottom-right-radius: 0;
-            }
-          }
-
-          .wpcf7-submit {
-            flex-basis: 35%;
-            border-top-right-radius: 4px;
-            border-bottom-right-radius: 4px;
-            max-height: $input-hight;
-            text-transform: none;
-
-            @include media-breakpoint-up(sm) {
-              flex-basis: 25%;
+            
+            .wpcf7-submit {
+              flex-basis: 35%;
+              border-radius: 0;
+              max-height: $input-height;
+              text-transform: none;
             }
           }
 
           .wpcf7-spinner {
-            margin: 10px auto 0 auto;
-            height: $input-hight;
-            min-width: $input-hight;
+            position: absolute;
+            bottom: -50px;
+            left: calc(50% - 19px);
+            margin: auto 0;
+            height: $input-height;
+            min-width: $input-height;
             border-radius: 100%;
 
             &::before {
@@ -351,27 +363,37 @@
       }
 
       .wpcf7-response-output {
-        margin: 0;
+        width: 100%;
+        margin: 10px auto 0 auto;
         background-color: $white;
+
+        @include media-breakpoint-up(sm) {
+          width: 500px;
+        }
       }
     }
 
     .social {
-      display: none;
+      @include small-cards();
+      flex-direction: row;
+      flex-wrap: wrap;
 
       @include media-breakpoint-up(md) {
-        @include small-cards();
-        height: 180px;
-      }
+          flex-wrap: nowrap
+        }
 
       a {
-        width: 25%;
+        width: 100%;
         color: $white;
         padding: 20px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @include media-breakpoint-up(sm) {
+          width: 248px;
+        }
 
         &.facebook {
           background-image: linear-gradient(225deg, #314f8b, #446bb7);
