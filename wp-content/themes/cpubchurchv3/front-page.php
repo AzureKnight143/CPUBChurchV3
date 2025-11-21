@@ -119,43 +119,48 @@ get_header();
                 </div>
             </div>
         <?php } ?>
-        <div class="<?php echo esc_attr($container); ?> contact">
-            <div class="contact-info">
-                <h2>How to Find Us</h2>
-                <ul>
-                    <li><i class="fas fa-map-marker-alt"></i><a href="https://goo.gl/maps/xZGMzXRckbo"
-                            target="_blank"><?php echo theme_variable_address; ?></a></li>
-                    <li><i class="fas fa-phone"></i><a href="tel:260-356-2642"><?php echo theme_variable_phone; ?></a>
-                    </li>
-                    <li><i class="fas fa-envelope"></i><a
-                            href="mailto:office@cpubchurch.com"><?php echo theme_variable_email; ?></a></li>
-                    <li><i class="fas fa-clock"></i>Sundays, <?php if (get_theme_mod('service_times')) {
-                        echo do_shortcode(get_theme_mod('service_times'));
-                    } ?></li>
-                </ul>
+        <div class="contact">
+            <div class="<?php echo esc_attr($container); ?>">
+                <div class="contact-info">
+                    <h2>How to Find Us</h2>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i><a href="https://goo.gl/maps/xZGMzXRckbo"
+                                target="_blank"><?php echo theme_variable_address; ?></a></li>
+                        <li><i class="fas fa-phone"></i><a
+                                href="tel:260-356-2642"><?php echo theme_variable_phone; ?></a>
+                        </li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="mailto:office@cpubchurch.com"><?php echo theme_variable_email; ?></a></li>
+                        <li><i class="fas fa-clock"></i>Sundays, <?php if (get_theme_mod('service_times')) {
+                            echo do_shortcode(get_theme_mod('service_times'));
+                        } ?></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="<?php echo esc_attr($container); ?> connect">
-            <?php if (get_theme_mod('newsletter_shortcode')) {
-                echo do_shortcode(get_theme_mod('newsletter_shortcode'));
-            } ?>
-            <div class="social">
-                <a class="facebook" href="https://www.facebook.com/cpubchurch" target="_blank">
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <div class="text">LIKE US ON FACEBOOK</div>
-                </a>
-                <a class="twitter" href="https://x.com/cpubchurch" target="_blank">
-                    <i class="fa-brands fa-x-twitter"></i>
-                    <div class="text">FOLLOW US ON X</div>
-                </a>
-                <a class="youtube" href="https://www.youtube.com/c/CollegeParkUnitedBrethrenChurch" target="_blank">
-                    <i class="fa-brands fa-youtube"></i>
-                    <div class="text">VIEW MORE CP CHURCH VIDEOS</div>
-                </a>
-                <a class="instagram" href="https://www.instagram.com/cpubchurch" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                    <div class="text">FOLLOW US ON INSTAGRAM</div>
-                </a>
+        <div class="connect">
+            <div class="<?php echo esc_attr($container); ?>">
+                <?php if (get_theme_mod('newsletter_shortcode')) {
+                    echo do_shortcode(get_theme_mod('newsletter_shortcode'));
+                } ?>
+                <div class="social">
+                    <a class="facebook" href="https://www.facebook.com/cpubchurch" target="_blank">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <div class="text">LIKE US ON FACEBOOK</div>
+                    </a>
+                    <a class="twitter" href="https://x.com/cpubchurch" target="_blank">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <div class="text">FOLLOW US ON X</div>
+                    </a>
+                    <a class="youtube" href="https://www.youtube.com/c/CollegeParkUnitedBrethrenChurch" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                        <div class="text">VIEW MORE CP CHURCH VIDEOS</div>
+                    </a>
+                    <a class="instagram" href="https://www.instagram.com/cpubchurch" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                        <div class="text">FOLLOW US ON INSTAGRAM</div>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
