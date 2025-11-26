@@ -52,6 +52,10 @@ dl {
   }
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 @import "header";
 @import "footer";
 @import "front-page";

@@ -8,10 +8,14 @@
     .simcal-day {
       color: $black;
 
+      &.simcal-day-void {
+        border: 0;
+      }
+
       &.simcal-day-has-events {
         > div {
           > span:not(.simcal-events-dots) {
-            background-color: $black !important;
+            background-color: $blue !important;
           }
         }
       }
