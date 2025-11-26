@@ -266,7 +266,7 @@
     }
 
     p {
-      margin: 0
+      margin: 0;
     }
 
     .wpcf7 {
@@ -298,10 +298,10 @@
             margin-bottom: 10px;
 
             @include media-breakpoint-up(sm) {
-                gap: 10px;
+              gap: 10px;
             }
 
-            input{
+            input {
               border-radius: 0;
             }
           }
@@ -317,7 +317,7 @@
             label {
               width: initial;
             }
-            
+
             input {
               margin-right: 10px;
             }
@@ -332,17 +332,20 @@
 
             .wpcf7-form-control-wrap {
               width: 100%;
-              
+
               input {
                 border-radius: 0;
               }
             }
-            
-            .wpcf7-submit {
+            #newsletter-submit {
               flex-basis: 35%;
               border-radius: 0;
               max-height: $input-height;
               text-transform: none;
+            }
+
+            .wpcf7-submit {
+              display: none;
             }
           }
 
@@ -379,8 +382,8 @@
       flex-wrap: wrap;
 
       @include media-breakpoint-up(md) {
-          flex-wrap: nowrap
-        }
+        flex-wrap: nowrap;
+      }
 
       a {
         width: 100%;
