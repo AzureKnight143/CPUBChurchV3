@@ -36,21 +36,23 @@ const plugins = [
 	multi(),
 ];
 
+const THEME_PATH = 'wp-content/themes/cpubchurchv3';
+
 module.exports = {
 	input: [
-		path.resolve( __dirname, `../js/${ bsSrcFile }` ),
-		path.resolve( __dirname, '../js/skip-link-focus-fix.js' ),
-		path.resolve( __dirname, '../js/custom-javascript.js' ),
+		path.resolve( __dirname, `../${THEME_PATH}/src/js/${ bsSrcFile }` ),
+		path.resolve( __dirname, `../${THEME_PATH}/src/js/skip-link-focus-fix.js` ),
+		path.resolve( __dirname, `../${THEME_PATH}/src/js/custom-javascript.js` ),
 	],
 	output: [
 		{
-			file: path.resolve( __dirname, `../../js/${ fileDest }.js` ),
+			file: path.resolve( __dirname, `../${THEME_PATH}/js/${ fileDest }.js` ),
 			format: 'umd',
 			globals,
 			name: 'understrap',
 		},
 		{
-			file: path.resolve( __dirname, `../../js/${ fileDest }.min.js` ),
+			file: path.resolve( __dirname, `../${THEME_PATH}/js/${ fileDest }.min.js` ),
 			format: 'umd',
 			globals,
 			name: 'understrap',

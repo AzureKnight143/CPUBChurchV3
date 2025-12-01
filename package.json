@@ -3,22 +3,14 @@
   "version": "1.2.0",
   "private": true,
   "scripts": {
-    "bs": "browser-sync start --config wp-content/themes/cpubchurchv3/src/build/browser-sync.config.js",
-    "css": "npm-run-all css-compile css-postcss css-minify",
-    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css --quiet wp-content/themes/cpubchurchv3/src/sass/child-theme.scss:wp-content/themes/cpubchurchv3/css/child-theme.css node_modules/understrap/src/sass/custom-editor-style.scss:wp-content/themes/cpubchurchv3/css/custom-editor-style.css",
-    "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output wp-content/themes/cpubchurchv3/css/ --batch --batch-suffix \".min\" \"wp-content/themes/cpubchurchv3/css/*.css\" \"!wp-content/themes/cpubchurchv3/css/*.min.css\" \"!wp-content/themes/cpubchurchv3/css/*rtl*.css\"",
-    "css-postcss": "postcss --config wp-content/themes/cpubchurchv3/src/build/postcss.config.js --replace \"wp-content/themes/cpubchurchv3/css/*.css\" \"!wp-content/themes/cpubchurchv3/css/*.rtl*.css\" \"!wp-content/themes/cpubchurchv3/css/*.min.css\"",
-    "js": "npm-run-all js-compile js-minify",
-    "js-compile": "rollup --config wp-content/themes/cpubchurchv3/src/build/rollup.config.js --sourcemap",
-    "js-minify": "terser wp-content/themes/cpubchurchv3/js/child-theme.min.js --config-file wp-content/themes/cpubchurchv3/src/build/terser.config.json --source-map \"content=wp-content/themes/cpubchurchv3/js/child-theme.js.map,url=child-theme.min.js.map,filename=child-theme.min.js\" --output wp-content/themes/cpubchurchv3/js/child-theme.min.js",
-    "watch": "npm-run-all --parallel watch-run-*",
-    "watch-bs": "npm-run-all --parallel bs watch-run-*",
-    "watch-run-css": "nodemon --watch wp-content/themes/cpubchurchv3/src/sass/ --ext scss --exec \"npm-run-all css\"",
-    "watch-run-js": "nodemon --watch wp-content/themes/cpubchurchv3/src/js/ --ext js --exec \"npm-run-all js\"",
-    "dist-build": "node wp-content/themes/cpubchurchv3/src/build/dist-build.js",
-    "dist-clean": "node wp-content/themes/cpubchurchv3/src/build/dist-clean.js",
-    "docker-up": "docker-compose up",
-    "docker-down": "docker-compose down"
+    "css": "node build/build-css.js",
+    "js": "node build/build-js.js",
+    "build": "npm-run-all css js",
+    "watch": "node build/watch.js",
+    "dist:build": "node build/dist-build.js",
+    "dist:clean": "node build/dist-clean.js",
+    "docker:up": "docker-compose up",
+    "docker:down": "docker-compose down"
   },
   "engines": {
     "node": ">=14"

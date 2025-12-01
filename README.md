@@ -24,8 +24,8 @@ To run locally you need to have Docker and Node installed.
    ```
 
 1. You can add a `dump.sql` file to the root of the project with a Wordpress database export and it will be imported on the first run of the Docker container.
-1. Run `npm run docker-up` to create the Wordpress instance in Docker.
-1. Run `npm run watch-bs` to start the site in watch mode.
+1. Run `npm run docker:up` to create the Wordpress instance in Docker.
+1. Run `npm run watch` to start the site in watch mode.
 1. The first time you will need to setup Wordpress, if you didn't import a database, and activate this theme. It will prompt you to install the parent theme when you activate.
 1. Modify the files inside the wp-content/themes/cpubchurchv3 folder.
 
@@ -34,5 +34,5 @@ To run locally you need to have Docker and Node installed.
 The cpubchurchv3 folder in the root is the compiled version of the theme. To compile the theme:
 
 1. Update style.css with a new version number, this will reflect in Wordpress as a new version.
-1. Run `npm run dist-build`.
+1. Run `npm run dist:build`.
 1. Use the WP-Pusher Wordpress plugin to register the github repository and point to the compiled folder.
