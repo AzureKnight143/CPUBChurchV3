@@ -31,8 +31,5 @@ To run locally you need to have Docker and Node installed.
 
 ## Deploying
 
-The cpubchurchv3 folder in the root is the compiled version of the theme. To compile the theme:
-
 1. Update style.css with a new version number, this will reflect in Wordpress as a new version.
-1. Run `npm run dist:build`.
-1. Use the WP-Pusher Wordpress plugin to register the github repository and point to the compiled folder.
+1. Run the `Deployment Workflow` action in Github to deploy the new version.
