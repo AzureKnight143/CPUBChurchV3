@@ -15,7 +15,7 @@ const commands = [
 
 console.log("Building JavaScript...");
 commands.forEach((cmd, i) => {
-  console.log(`Step ${i + 1}/${commands.length}...`);
+  console.log(`JS Step ${i + 1}/${commands.length}`);
   execSync(cmd, { stdio: "inherit" });
 });
 console.log("✓ JavaScript build complete");
