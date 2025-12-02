@@ -1,6 +1,22 @@
 #!/usr/bin/env node
 const { spawn } = require("child_process");
-const config = require("./watch.config");
+
+const THEME_PATH = "wp-content/themes/cpubchurchv3";
+
+const watchers = [
+  {
+    name: "CSS",
+    watch: `${THEME_PATH}/src/sass/`,
+    ext: "scss",
+    exec: "npm run css",
+  },
+  {
+    name: "JS",
+    watch: `${THEME_PATH}/src/js/`,
+    ext: "js",
+    exec: "npm run js",
+  },
+];
 
 const processes = [];
 
@@ -8,7 +24,14 @@ const processes = [];
 console.log("Starting Browser Sync...");
 const bs = spawn(
   "browser-sync",
-  ["start", "--config", "build/browser-sync.config.js"],
+  [
+    "start",
+    "--proxy", "localhost:8000",
+    "--no-notify",
+    "--files", `${THEME_PATH}/css/*.min.css`,
+    "--files", `${THEME_PATH}/js/*.min.js`,
+    "--files", `${THEME_PATH}/**/*.php`,
+  ],
   {
     stdio: "inherit",
     shell: true,
@@ -17,7 +40,7 @@ const bs = spawn(
 processes.push(bs);
 
 // Start each watcher
-config.watchers.forEach((watcher) => {
+watchers.forEach((watcher) => {
   console.log(`Starting ${watcher.name} watcher...`);
   const nodemon = spawn(
     "nodemon",
