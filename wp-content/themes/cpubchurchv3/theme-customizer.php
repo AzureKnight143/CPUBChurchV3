@@ -58,7 +58,7 @@ function customize_register(WP_Customize_Manager $wp_customize)
         'type' => 'textarea'
     ));
 
-    for ($banner_link_number = 1; $banner_link_number <= 2; $banner_link_number++) {
+    for ($banner_link_number = 1; $banner_link_number <= 3; $banner_link_number++) {
         $wp_customize->add_setting('banner_link_text_' . $banner_link_number);
         $wp_customize->add_control('banner_link_text_' . $banner_link_number, array(
             'label' => __('Link ' . $banner_link_number . ' Text'),
@@ -69,7 +69,7 @@ function customize_register(WP_Customize_Manager $wp_customize)
         $wp_customize->add_control('banner_link_' . $banner_link_number, array(
             'label' => __('Link ' . $banner_link_number . ' Page'),
             'section' => 'homepage_banner',
-            'type' => 'dropdown-pages'
+            'type' => 'url'
         ));
     }
 
@@ -97,36 +97,9 @@ function customize_register(WP_Customize_Manager $wp_customize)
         $wp_customize->add_control('highlight_link_' . $highlight_link_number, array(
             'label' => __('Card ' . $highlight_link_number . ' Page Link'),
             'section' => 'homepage_highlights',
-            'type' => 'dropdown-pages'
+            'type' => 'url'
         ));
     }
-
-    // Homepage Sermon Section
-    $wp_customize->add_section('homepage_sermon', array(
-        'title' => __('Sermon'),
-        'panel' => 'homepage',
-        'priority' => 3,
-    ));
-
-    $wp_customize->add_setting('sermon_background_image');
-    $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize, 'sermon_background_image', array(
-        'label' => __('Background Image'),
-        'section' => 'homepage_sermon',
-        'width' => 1920,
-        'height' => 700
-    )));
-
-    $wp_customize->add_setting('sermon_title');
-    $wp_customize->add_control('sermon_title', array(
-        'label' => __('Title'),
-        'section' => 'homepage_sermon'
-    ));
-
-    $wp_customize->add_setting('sermon_subtitle');
-    $wp_customize->add_control('sermon_subtitle', array(
-        'label' => __('Subtitle'),
-        'section' => 'homepage_sermon'
-    ));
 
     // Homepage Small Highlights Section
     $wp_customize->add_section('homepage_small_highlights', array(

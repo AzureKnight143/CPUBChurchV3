@@ -1,19 +1,26 @@
 <?php
-$featured_posts = wp_get_recent_posts(array(
-    'numberposts' => '1',
+$featured_posts = get_posts(array(
+    'numberposts' => 4,
     'post_status' => 'publish',
-    'category_name' => "featured"
+    'category_name' => 'featured'
 ));
 $featured_post = array_shift($featured_posts);
 
-$recent_posts = wp_get_recent_posts(array(
-    'numberposts' => '3',
-    'post_status' => 'publish',
-    'category_name' => 'news',
-    'post__not_in' => $featured_post ? array($featured_post['ID']) : array()
-));
-
 $announcementCount = 0;
+
+function render_link($url, $content, $class = '', $raw_content = false)
+{
+    if (!$url || !$content)
+        return;
+    $is_relative = preg_match('/^\/[^\s]*$/', $url);
+    if (!filter_var($url, FILTER_VALIDATE_URL) && !$is_relative)
+        return;
+    $is_external = !$is_relative && parse_url($url, PHP_URL_HOST) !== parse_url(home_url(), PHP_URL_HOST);
+    $class_attr = $class ? ' class="' . esc_attr($class) . '"' : '';
+    $target_attr = $is_external ? ' target="_blank" rel="noopener noreferrer"' : '';
+    $inner = $raw_content ? $content : esc_html($content);
+    echo '<a href="' . esc_url($url) . '"' . $class_attr . $target_attr . '>' . $inner . '</a>';
+}
 
 function getAnnouncementAlignment($announcementCount)
 {
@@ -29,75 +36,66 @@ get_header();
         <div class="<?php echo esc_attr($container); ?>">
             <div class="banner">
                 <?php if (get_theme_mod('banner_subtitle')) { ?>
-                    <h2><?php echo get_theme_mod('banner_subtitle') ?></h2>
+                    <h2><?php echo esc_html(get_theme_mod('banner_subtitle')) ?></h2>
                 <?php } ?>
                 <?php if (get_theme_mod('banner_title')) { ?>
-                    <h1><?php echo get_theme_mod('banner_title') ?></h1>
+                    <h1><?php echo esc_html(get_theme_mod('banner_title')) ?></h1>
                 <?php } ?>
                 <?php if (get_theme_mod('banner_content')) { ?>
-                    <p><?php echo get_theme_mod('banner_content') ?></p>
+                    <p><?php echo esc_html(get_theme_mod('banner_content')) ?></p>
                 <?php } ?>
                 <div class="links">
-                    <?php for ($banner_link_number = 0; $banner_link_number <= 2; $banner_link_number++) { ?>
-                        <?php if (get_theme_mod('banner_link_' . $banner_link_number) && get_theme_mod('banner_link_text_' . $banner_link_number)) { ?>
-                            <a
-                                href="<?php echo get_permalink(get_theme_mod('banner_link_' . $banner_link_number)) ?>"><?php echo get_theme_mod('banner_link_text_' . $banner_link_number) ?></a>
-                        <?php } ?>
-                    <?php } ?>
+                    <?php for ($banner_link_number = 1; $banner_link_number <= 3; $banner_link_number++) {
+                        render_link(
+                            get_theme_mod('banner_link_' . $banner_link_number),
+                            get_theme_mod('banner_link_text_' . $banner_link_number)
+                        );
+                    } ?>
                 </div>
             </div>
             <div class="highlights">
-                <?php for ($highlight_number = 0; $highlight_number <= 3; $highlight_number++) { ?>
-                    <?php if (get_theme_mod('highlight_title_' . $highlight_number) && get_theme_mod('highlight_link_' . $highlight_number)) { ?>
-                        <a class="highlight"
-                            href="<?php echo get_permalink(get_theme_mod('highlight_link_' . $highlight_number)) ?>">
-                            <h2><?php echo get_theme_mod('highlight_title_' . $highlight_number) ?></h2>
+                <?php for ($highlight_number = 1; $highlight_number <= 3; $highlight_number++) {
+                    $highlight_title = get_theme_mod('highlight_title_' . $highlight_number);
+                    $highlight_link = get_theme_mod('highlight_link_' . $highlight_number);
+                    if ($highlight_title && $highlight_link && (filter_var($highlight_link, FILTER_VALIDATE_URL) || preg_match('/^\/[^\s]*$/', $highlight_link))) { ?>
+                        <a class="highlight" href="<?php echo esc_url($highlight_link) ?>">
+                            <h2><?php echo esc_html($highlight_title) ?></h2>
                             <?php if (get_theme_mod('highlight_subtitle_' . $highlight_number)) { ?>
-                                <p><?php echo get_theme_mod('highlight_subtitle_' . $highlight_number) ?></p>
+                                <p><?php echo esc_html(get_theme_mod('highlight_subtitle_' . $highlight_number)) ?></p>
                             <?php } ?>
                         </a>
-                    <?php } ?>
-                <?php } ?>
+                    <?php }
+                } ?>
             </div>
         </div>
         <?php if ($featured_post) {
             $announcementCount++; ?>
             <div class="featured announcement"
-                style="background-image: url('<?php echo get_field('home_page_image', $featured_post["ID"])['url'] ?>')">
+                style="background-image: url('<?php echo esc_url(get_field('home_page_image', $featured_post->ID)['url']) ?>')">
                 <div class="<?php echo esc_attr($container); ?>">
-                    <h2><?php echo $featured_post["post_title"]; ?></h2>
-                    <?php if (get_field('subtitle', $featured_post["ID"])) { ?>
-                        <h3><?php the_field('subtitle', $featured_post["ID"]); ?></h3>
+                    <h2><?php echo esc_html($featured_post->post_title); ?></h2>
+                    <?php if (get_field('subtitle', $featured_post->ID)) { ?>
+                        <h3><?php the_field('subtitle', $featured_post->ID); ?></h3>
                     <?php } ?>
-                    <a class="more" href="<?php echo get_permalink($featured_post["ID"]); ?>">Learn More</a>
+                    <a class="more" href="<?php echo get_permalink($featured_post->ID); ?>">Learn More</a>
                 </div>
             </div>
         <?php }
         $announcementCount++; ?>
-        <div class="sermon announcement <?php getAnnouncementAlignment($announcementCount) ?>"
-            style="background-image: url('<?php echo wp_get_attachment_url(get_theme_mod('sermon_background_image')) ?>')">
-            <div class="<?php echo esc_attr($container); ?>">
-                <?php if (get_theme_mod('sermon_title')) { ?>
-                    <h2><?php echo get_theme_mod('sermon_title') ?></h2>
-                <?php } ?>
-                <?php if (get_theme_mod('sermon_subtitle')) { ?>
-                    <h3><?php echo get_theme_mod('sermon_subtitle') ?></h3>
-                <?php } ?>
-                <a class="more" href="<?php echo get_permalink(get_page_by_path('sermons')) ?>">Watch Latest Sermon</a>
-            </div>
-        </div>
         <div class="<?php echo esc_attr($container); ?>">
             <div class="small-highlights">
                 <div class="position-wrapper">
-                    <?php for ($small_highlight_number = 0; $small_highlight_number <= 4; $small_highlight_number++) { ?>
+                    <?php for ($small_highlight_number = 1; $small_highlight_number <= 4; $small_highlight_number++) { ?>
                         <?php if (get_theme_mod('small_highlight_title_' . $small_highlight_number) && get_theme_mod('small_highlight_image_' . $small_highlight_number)) { ?>
                             <div class="small-highlight">
                                 <img src="<?php echo wp_get_attachment_url(get_theme_mod('small_highlight_image_' . $small_highlight_number)) ?>"
-                                    alt="<?php echo get_theme_mod('small_highlight_title_' . $small_highlight_number) ?>" />
+                                    alt="<?php echo esc_attr(get_theme_mod('small_highlight_title_' . $small_highlight_number)) ?>" />
                                 <div class="content">
-                                    <h3><?php echo get_theme_mod('small_highlight_title_' . $small_highlight_number) ?></h3>
+                                    <h3><?php echo esc_html(get_theme_mod('small_highlight_title_' . $small_highlight_number)) ?>
+                                    </h3>
                                     <?php if (get_theme_mod('small_highlight_content_' . $small_highlight_number)) { ?>
-                                        <p><?php echo get_theme_mod('small_highlight_content_' . $small_highlight_number) ?></p>
+                                        <p><?php echo esc_html(get_theme_mod('small_highlight_content_' . $small_highlight_number)) ?>
+                                        </p>
                                     <?php } ?>
                                 </div>
                             </div>
@@ -106,16 +104,16 @@ get_header();
                 </div>
             </div>
         </div>
-        <?php foreach ($recent_posts as $post) {
+        <?php foreach ($featured_posts as $post) {
             $announcementCount++; ?>
             <div class="announcement <?php getAnnouncementAlignment($announcementCount) ?>"
-                style="background-image: url('<?php echo get_field('home_page_image', $post["ID"])['url'] ?>')">
+                style="background-image: url('<?php echo esc_url(get_field('home_page_image', $post->ID)['url']) ?>')">
                 <div class="<?php echo esc_attr($container); ?>">
-                    <h2><?php echo $post["post_title"]; ?></h2>
-                    <?php if (get_field('subtitle', $post["ID"])) { ?>
-                        <h3><?php the_field('subtitle', $post["ID"]); ?></h3>
+                    <h2><?php echo esc_html($post->post_title); ?></h2>
+                    <?php if (get_field('subtitle', $post->ID)) { ?>
+                        <h3><?php the_field('subtitle', $post->ID); ?></h3>
                     <?php } ?>
-                    <a class="more" href="<?php echo get_permalink($post["ID"]); ?>">Learn More</a>
+                    <a class="more" href="<?php echo get_permalink($post->ID); ?>">Learn More</a>
                 </div>
             </div>
         <?php } ?>
